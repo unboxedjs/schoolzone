@@ -2,23 +2,27 @@
 
 # TODO List
 
-- Monorepo Config - Linting and Serving
-  - Add frontend to .eslintignore.
-  - Add tsling configuration in angular.json.
-  - Add some basic tslint rule to ensure that tslint and eslint are working across projects. Architectural level rules will be added in later part
-- Add Concurrently to run backend and frontend together
+- Initialize MongoDB
+  - create a free tier db in mongoDB Atlas.
+  - add the dependencies mentioned in terminal commands.
+  - add the mongoose module to the app root
+  - provide a healthCheck endpoint with reasonable values to assess the server condition.
+- Use configuration and env to have process variables.
+  - add .env to .gitignore
+  - provide .env.example for refernce
+  - remove existing hardcoded process values from main.ts
 
 # Terminal Commands Used
 
-- yarn add -D concurrently
-- yarn start
+- yarn add dotenv
+- yarn add @nestjs/mongoose mongoose
+- yarn add -D @types/mongoose
+- yarn start:server
 
 # Problems you might Run Into
 
-- Make sure to check the tsconfig exclusions
-- Experimental support for decorators is a feature that is subject.
-  In VSCode, Go to File => Preferences => Settings => "javascript.implicitProjectConfig.experimentalDecorators": true
+- make sure to instatiate a .env
 
-# Lecture 24
+# Lecture 25
 
-- Monorepo Config - Linting and Serving
+- Initialize MongoDB
