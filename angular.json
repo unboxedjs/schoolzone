@@ -104,6 +104,12 @@
           "options": {
             "browserTarget": "school:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["frontend/school/tsconfig.app.json"]
+          }
         }
       }
     },
@@ -204,6 +210,12 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "admin:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["frontend/admin/tsconfig.app.json"]
           }
         }
       }
@@ -306,6 +318,12 @@
           "options": {
             "browserTarget": "super:build"
           }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["frontend/admin/tsconfig.app.json"]
+          }
         }
       }
     },
@@ -406,6 +424,12 @@
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
             "browserTarget": "sandbox:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["frontend/sandbox/tsconfig.app.json"]
           }
         }
       }

@@ -5,9 +5,9 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"backend/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
+    "start:client": "ng serve",
+    "start:server": "nest start --watch",
+    "start": "concurrently -c \"green.bold,blue.bold\" -n \"API,SCHOOL\" \"yarn start:server\" \"yarn start:client --progress=false --verbose=false\"",
     "start:prod": "node dist/main",
     "lint": "eslint \"{backend,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
@@ -39,8 +39,6 @@
     "@angular-devkit/build-angular": "~0.1000.1",
     "@angular/cli": "~10.0.1",
     "@angular/compiler-cli": "~10.0.2",
-    "tslint": "~6.1.0",
-    "typescript": "~3.9.5",
     "@nestjs/cli": "^7.0.0",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
@@ -50,6 +48,7 @@
     "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "3.0.2",
     "@typescript-eslint/parser": "3.0.2",
+    "concurrently": "^5.2.0",
     "eslint": "7.1.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
@@ -59,6 +58,8 @@
     "ts-jest": "26.1.0",
     "ts-loader": "^6.2.1",
     "ts-node": "^8.6.2",
-    "tsconfig-paths": "^3.9.0"
+    "tsconfig-paths": "^3.9.0",
+    "tslint": "~6.1.0",
+    "typescript": "~3.9.5"
   }
 }

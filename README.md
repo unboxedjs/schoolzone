@@ -2,22 +2,23 @@
 
 # TODO List
 
-- Initialize NestJS backend
-  - Rename tsconfig json as client and server tsconfig files (readability - Optional).
-  - Rename src to backend (readability - Optional).
-  - Remove e2e or any other spec (Will be covered later)
-  - Modify Package JSON scripts to convenience
+- Monorepo Config - Linting and Serving
+  - Add frontend to .eslintignore.
+  - Add tsling configuration in angular.json.
+  - Add some basic tslint rule to ensure that tslint and eslint are working across projects. Architectural level rules will be added in later part
+- Add Concurrently to run backend and frontend together
 
 # Terminal Commands Used
 
-- nest new backend -s -g -p yarn
-- yarn
+- yarn add -D concurrently
+- yarn start
 
 # Problems you might Run Into
 
-- Make sure to check the cli command
-- Make sure to modify the file and folder names if tsconfig or src folder name is changed.
+- Make sure to check the tsconfig exclusions
+- Experimental support for decorators is a feature that is subject.
+  In VSCode, Go to File => Preferences => Settings => "javascript.implicitProjectConfig.experimentalDecorators": true
 
-# Lecture 23
+# Lecture 24
 
-- Initialize NestJS backend
+- Monorepo Config - Linting and Serving
