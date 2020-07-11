@@ -2,24 +2,22 @@
 
 # TODO List
 
-- Initialize Angular frontned
-  - Actual school app
-  - School Admin App
-  - Product Admin App
-  - SandBox App
+- Initialize NestJS backend
+  - Rename tsconfig json as client and server tsconfig files (readability - Optional).
+  - Rename src to backend (readability - Optional).
+  - Remove e2e or any other spec (Will be covered later)
+  - Modify Package JSON scripts to convenience
 
 # Terminal Commands Used
 
-- ng new school --skipInstall=true --minimal=true --createApplication=false --skipGit=true --style=scss --skipTests=true --prefix=sz --packageManager=yarn --newProjectRoot=frontend --directory=./
-- ng g application school --minimal=true --routing --style=scss --prefix=sz --skipTests=true
-- ng g application admin --minimal=true --routing --style=scss --prefix=sz --skipTests=true
-- ng g application super --minimal=true --routing --style=scss --prefix=sz --skipTests=true
-- ng g application sandbox --minimal=true --routing --style=scss --prefix=sz --skipTests=true
+- nest new backend -s -g -p yarn
+- yarn
 
 # Problems you might Run Into
 
 - Make sure to check the cli command
+- Make sure to modify the file and folder names if tsconfig or src folder name is changed.
 
-# Lecture 22
+# Lecture 23
 
-- Initialize Angular frontend
+- Initialize NestJS backend

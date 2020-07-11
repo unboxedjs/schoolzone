@@ -11,25 +11,16 @@
       "path": "./frontend/school/tsconfig.app.json"
     },
     {
-      "path": "./frontend/school/tsconfig.spec.json"
-    },
-    {
       "path": "./frontend/admin/tsconfig.app.json"
-    },
-    {
-      "path": "./frontend/admin/tsconfig.spec.json"
     },
     {
       "path": "./frontend/super/tsconfig.app.json"
     },
     {
-      "path": "./frontend/super/tsconfig.spec.json"
-    },
-    {
       "path": "./frontend/sandbox/tsconfig.app.json"
     },
     {
-      "path": "./frontend/sandbox/tsconfig.spec.json"
+      "path": "tsconfig.build.json"
     }
-]
+  ]
 }
