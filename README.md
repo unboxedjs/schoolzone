@@ -2,27 +2,22 @@
 
 # TODO List
 
-- Initialize MongoDB
-  - create a free tier db in mongoDB Atlas.
-  - add the dependencies mentioned in terminal commands.
-  - add the mongoose module to the app root
-  - provide a healthCheck endpoint with reasonable values to assess the server condition.
-- Use configuration and env to have process variables.
-  - add .env to .gitignore
-  - provide .env.example for refernce
-  - remove existing hardcoded process values from main.ts
+- Tets an Interface that could be shared across applications in both front end and back end.
+- Add proxy.conf.json for connecting to API from angular
+- Create a shared Library to use across angular projects thereby reducing repetition
+- Shared lib should also be linted and tested.
+- Should support sharing of assets and styles as well.
 
 # Terminal Commands Used
 
-- yarn add dotenv
-- yarn add @nestjs/mongoose mongoose
-- yarn add -D @types/mongoose
-- yarn start:server
+- nest g interface interfaces/common
+- ng g s \_services/general --skip-tests
+- ng g library shared --prefix=sz
 
 # Problems you might Run Into
 
-- make sure to instatiate a .env
+- make sure angular.json and tsconfig are confgiured as per this commit.
 
-# Lecture 25
+# Lecture 26
 
-- Initialize MongoDB
+- Monorepo Config - Shared Resources

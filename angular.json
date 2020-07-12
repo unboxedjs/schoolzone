@@ -91,7 +91,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "school:build"
+            "browserTarget": "school:build",
+            "proxyConfig": "frontend/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -198,7 +199,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "admin:build"
+            "browserTarget": "admin:build",
+            "proxyConfig": "frontend/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -305,7 +307,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "super:build"
+            "browserTarget": "super:build",
+            "proxyConfig": "frontend/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -412,7 +415,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sandbox:build"
+            "browserTarget": "sandbox:build",
+            "proxyConfig": "frontend/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -430,6 +434,21 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["frontend/sandbox/tsconfig.app.json"]
+          }
+        }
+      }
+    },
+    "shared": {
+      "projectType": "library",
+      "root": "frontend/shared",
+      "sourceRoot": "frontend/shared/src",
+      "prefix": "sz",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["frontend/shared/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
