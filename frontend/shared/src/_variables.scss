@@ -1,0 +1,37 @@
+// Fonts
+
+@font-face {
+  font-family: aBold;
+  src: url('assets/fonts/AlegreyaSans-Bold.ttf');
+}
+
+@font-face {
+  font-family: aRegular;
+  src: url('assets/fonts/AlegreyaSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: mRegular;
+  src: url('assets/fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: mLight;
+  src: url('assets/fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+  font-family: mItalic;
+  src: url('assets/fonts/Montserrat-LightItalic.ttf');
+}
+
+// 1. Typography
+
+// 2. css variables
+
+:root {
+  --primary-app-color: #1976d2;
+  --secondary-app-color: #616161;
+}
+
+// 3. mixin pattern

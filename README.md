@@ -1,23 +1,30 @@
 # Schoolzone
 
+The Schoolzone app could be started with the following commands,
+
+    Create .env File
+    yarn
+    yarn start
+
 # TODO List
 
-- Tets an Interface that could be shared across applications in both front end and back end.
-- Add proxy.conf.json for connecting to API from angular
-- Create a shared Library to use across angular projects thereby reducing repetition
-- Shared lib should also be linted and tested.
-- Should support sharing of assets and styles as well.
+- Install angular material to the dependencies.
+- Use ng add to go with custom theming template.
+- Configure assets folder in angular.json.
+- Add variables scss to hold all scss variables.
+- Add font family as per your typography.
+- Create material module in shared library.
 
 # Terminal Commands Used
 
-- nest g interface interfaces/common
-- ng g s \_services/general --skip-tests
-- ng g library shared --prefix=sz
+- yarn add @angular/material
+- ng add @angular/material --project=sandbox
+- yarn start:client --project=sandbox
 
 # Problems you might Run Into
 
-- make sure angular.json and tsconfig are confgiured as per this commit.
+- Mostly I guess you might run into incorrect path for assets. Other than than, nothing could go wrong.
 
-# Lecture 26
+# Lecture 27
 
-- Monorepo Config - Shared Resources
+- Materialize your frontend

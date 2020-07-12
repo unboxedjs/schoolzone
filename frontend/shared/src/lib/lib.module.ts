@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MaterialModule } from './material.module';
 
 @NgModule({
-  declarations: [CommonModule],
-  imports: [],
-  exports: [],
+  imports: [MaterialModule],
+  exports: [MaterialModule],
 })
 export class LibModule {}
