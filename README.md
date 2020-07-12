@@ -8,23 +8,29 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Install angular material to the dependencies.
-- Use ng add to go with custom theming template.
-- Configure assets folder in angular.json.
-- Add variables scss to hold all scss variables.
-- Add font family as per your typography.
-- Create material module in shared library.
+- Modularize Backend and make appropriate tsconfig changes
+  controllers
+  enums
+  interfaces
+  handlers
+  schemas
+  utils
+- Use exceptions for error handling and interceptor for jwt by registering it either in app level(At least one global handling is expected) or module level.
 
 # Terminal Commands Used
 
-- yarn add @angular/material
-- ng add @angular/material --project=sandbox
-- yarn start:client --project=sandbox
+- nest g module controllers/user --no-spec
+- nest g controller controllers/user --no-spec
+- nest g controller controllers/auth --no-spec
+- nest g service controllers/auth --no-spec
+- nest g service controllers/user --no-spec
+- nest g interceptor handlers/interceptor/global --no-spec
 
 # Problems you might Run Into
 
-- Mostly I guess you might run into incorrect path for assets. Other than than, nothing could go wrong.
+- Unique field in mongoose not working
+  Restart Server after adding useCreateIndex and also delete db for changes to reflect
 
-# Lecture 27
+# Lecture 28
 
-- Materialize your frontend
+- Modularize your backend

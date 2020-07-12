@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@sz/interface": ["backend/interfaces"]
+      "@sz/interface": ["backend/interfaces"],
+      "@sz/enum": ["backend/enums"]
     }
   }
 }
