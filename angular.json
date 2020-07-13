@@ -119,6 +119,15 @@
           "options": {
             "tsConfig": ["frontend/school/tsconfig.app.json"]
           }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "frontend/school/jest.config.js",
+            "tsConfig": "frontend/school/tsconfig.spec.json",
+            "setupFile": "frontend/school/src/test-setup.ts",
+            "passWithhNoTests": true
+          }
         }
       }
     },
@@ -481,6 +490,15 @@
           "options": {
             "tsConfig": ["frontend/shared/tsconfig.lib.json"],
             "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "frontend/shared/jest.config.js",
+            "tsConfig": "frontend/shared/tsconfig.spec.json",
+            "setupFile": "frontend/shared/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       }

@@ -8,29 +8,31 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Modularize Backend and make appropriate tsconfig changes
-  controllers
-  enums
-  interfaces
-  handlers
-  schemas
-  utils
-- Use exceptions for error handling and interceptor for jwt by registering it either in app level(At least one global handling is expected) or module level.
+- Implement Automation testing with Code coverage,
+  - Create jest.config.js for both frontend and backend since parallel pipelines will be configured based on changed files.
+  - Include test builder with nrwl/jest for angular since it is pre configured and supports workspace.
+  - import 'jest-preset-angular' in test-setup.ts
+- Provide documentation support,
+  - compodoc
+  - Swagger
 
 # Terminal Commands Used
 
-- nest g module controllers/user --no-spec
-- nest g controller controllers/user --no-spec
-- nest g controller controllers/auth --no-spec
-- nest g service controllers/auth --no-spec
-- nest g service controllers/user --no-spec
-- nest g interceptor handlers/interceptor/global --no-spec
+- yarn add @nrwl/jest
+- yarn add @compodoc/compodoc
+- yarn add @nestjs/swagger swagger-ui-express
 
 # Problems you might Run Into
 
-- Unique field in mongoose not working
-  Restart Server after adding useCreateIndex and also delete db for changes to reflect
+- zone is needed for the async() test helper but could not be found
+  Check for test-setup.ts
 
-# Lecture 28
+- Nest can't resolve dependencies of the AppService (?). Please make sure that the argument DatabaseConnection at index [0] is available in the RootTestModule context.
 
-- Modularize your backend
+> Mongoose: looks like you're trying to test a Mongoose app with Jest's default jsdom test environment. Please make sure you read Mongoose's docs on configuring Jest to test Node.js apps: <http://mongoosejs.com/docs/jest.html>
+
+add testEnvironment: 'node' in jest.config.js
+
+# Lecture 29
+
+- Monorepo Config - Jest and Documentation
