@@ -63,6 +63,9 @@
               "frontend/shared/src/global.scss",
               "frontend/school/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["frontend/shared/src/"]
+            },
             "scripts": []
           },
           "configurations": {

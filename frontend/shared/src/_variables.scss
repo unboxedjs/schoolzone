@@ -1,5 +1,4 @@
 // Fonts
-
 @font-face {
   font-family: aBold;
   src: url('assets/fonts/AlegreyaSans-Bold.ttf');
@@ -25,13 +24,43 @@
   src: url('assets/fonts/Montserrat-LightItalic.ttf');
 }
 
-// 1. Typography
-
-// 2. css variables
-
+// css variables
 :root {
-  --primary-app-color: #1976d2;
-  --secondary-app-color: #616161;
+  //colors
+  --white-base-color: #f4f4f4;
+  --black-base-color: #1e1f21;
+  --app-base-color: #f4f4f4;
+  --primary-base-color: #1976d2;
+  --secondary-base-color: #616161;
+  --secondary-light-color: #c4c4c4;
+  --accent-base-color: #7f6196;
+  --error-base-color: #b92d00;
+  --warn-base-color: #c2b678;
+  --gentle-base-color: #78c2a4;
+  --bg-base-color: #eeeeee;
+  --nav-base-color: #151b26;
+  --active-base-color: #444951;
+  --hover-base-color: #0b0f15;
+  --disabled-dark-color: #888;
+  --disabled-base-color: #dddddd;
+  --disabled-light-color: #dcdcdc;
+
+  // Sizes
+  --line-thick-size: 4px;
+  --line-base-size: 2px;
+  --margin-base-size: 1vw;
+  --padding-base-size: 1vw;
+  --subnav-height-size: 30px;
 }
 
-// 3. mixin pattern
+// Mixin breakpoint
+$breakpoints: (
+  'phone': 400px,
+  'phone-wide': 480px,
+  'phablet': 560px,
+  'tablet-small': 640px,
+  'tablet': 768px,
+  'tablet-wide': 1024px,
+  'desktop': 1248px,
+  'desktop-wide': 1440px,
+);
