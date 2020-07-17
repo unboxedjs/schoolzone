@@ -1,0 +1,146 @@
+image: mhart/alpine-node:14.5
+
+stages:
+  - install
+  #dev checks
+  - lint
+  - test
+  #- document
+  #build
+  - build
+  #- dockerize
+  #deploy
+  #- deploy
+
+cache: &global_cache
+  paths:
+    - node_modules/
+  policy: pull
+
+install:
+  stage: install
+  script:
+    - yarn
+    - yarn doc
+  cache:
+    <<: *global_cache
+    #overide the policy
+    policy: pull-push
+  artifacts:
+    paths:
+      - documentation/reference
+    expire_in: 50 minutes
+
+#lint stages
+
+lint api:
+  stage: lint
+  script:
+    - yarn lint
+
+lint school:
+  stage: lint
+  script:
+    - yarn lint:client --project=school
+
+lint admin:
+  stage: lint
+  script:
+    - yarn lint:client --project=admin
+
+lint super:
+  stage: lint
+  script:
+    - yarn lint:client --project=super
+
+lint sandbox:
+  stage: lint
+  script:
+    - yarn lint:client --project=sandbox
+
+lint shared:
+  stage: lint
+  script:
+    - yarn lint:client --project=shared
+
+#test stages
+
+test api:
+  stage: test
+  script:
+    - yarn test
+  artifacts:
+    paths: -coverage/backend
+    expire_in: 50 minutes
+
+test school:
+  stage: test
+  script:
+    - yarn test:client --project=school
+  artifacts:
+    paths: -coverage/school
+    expire_in: 50 minutes
+
+test shared:
+  stage: test
+  script:
+    - yarn test:client --project=shared
+  artifacts:
+    paths: -coverage/shared
+    expire_in: 50 minutes
+
+#build stages
+
+build api:
+    stage: build
+    script:
+        - yarn build
+    artifacts:
+        paths:
+            - dist/api
+        expire_in: 50 minutes
+
+build school:
+    stage: build
+    script:
+        - yarn build:client --project=school
+    artifacts:
+        paths:
+            -dist/school
+        expire_in: 50 minutes
+
+build school:
+    stage: build
+    script:
+        - yarn build:client --project=school
+    artifacts:
+        paths:
+            -dist/school
+        expire_in: 50 minutes
+
+build admin:
+    stage: build
+    script:
+        - yarn build:client --project=admin
+    artifacts:
+        paths:
+            -dist/admin
+        expire_in: 50 minutes
+
+build super:
+    stage: build
+    script:
+        - yarn build:client --project=super
+    artifacts:
+        paths:
+            -dist/super
+        expire_in: 50 minutes
+
+build sandbox:
+    stage: build
+    script:
+        - yarn build:client --project=sandbox
+    artifacts:
+        paths:
+            -dist/sandbox
+        expire_in: 50 minutes

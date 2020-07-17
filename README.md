@@ -8,8 +8,7 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Add Licence and badges
-- Add css variables and layout
+- Initiate Pipeline with .gitlab-ci.yml
 
 # Terminal Commands Used
 
@@ -19,6 +18,6 @@ The Schoolzone app could be started with the following commands,
 
 - Nil
 
-# Lecture 30
+# Lecture 32
 
-- Monorepo Tweaks
+- GitLab Pipeline stages - Basics
