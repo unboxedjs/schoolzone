@@ -191,6 +191,9 @@
               "frontend/shared/src/global.scss",
               "frontend/admin/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["frontend/shared/src/"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -307,6 +310,9 @@
               "frontend/shared/src/global.scss",
               "frontend/super/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["frontend/shared/src/"]
+            },
             "scripts": []
           },
           "configurations": {
@@ -423,6 +429,9 @@
               "frontend/shared/src/global.scss",
               "frontend/sandbox/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["frontend/shared/src/"]
+            },
             "scripts": []
           },
           "configurations": {
