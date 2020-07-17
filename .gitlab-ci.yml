@@ -70,7 +70,8 @@ test api:
   script:
     - yarn test
   artifacts:
-    paths: -coverage/backend
+    paths: 
+      - coverage/backend
     expire_in: 50 minutes
 
 test school:
@@ -78,7 +79,8 @@ test school:
   script:
     - yarn test:client --project=school
   artifacts:
-    paths: -coverage/school
+    paths: 
+      - coverage/school
     expire_in: 50 minutes
 
 test shared:
@@ -86,7 +88,8 @@ test shared:
   script:
     - yarn test:client --project=shared
   artifacts:
-    paths: -coverage/shared
+    paths: 
+      - coverage/shared
     expire_in: 50 minutes
 
 #build stages
@@ -106,7 +109,7 @@ build school:
         - yarn build:client --project=school
     artifacts:
         paths:
-            -dist/school
+            - dist/school
         expire_in: 50 minutes
 
 build school:
@@ -115,7 +118,7 @@ build school:
         - yarn build:client --project=school
     artifacts:
         paths:
-            -dist/school
+            - dist/school
         expire_in: 50 minutes
 
 build admin:
@@ -124,7 +127,7 @@ build admin:
         - yarn build:client --project=admin
     artifacts:
         paths:
-            -dist/admin
+            - dist/admin
         expire_in: 50 minutes
 
 build super:
@@ -133,7 +136,7 @@ build super:
         - yarn build:client --project=super
     artifacts:
         paths:
-            -dist/super
+            - dist/super
         expire_in: 50 minutes
 
 build sandbox:
@@ -142,5 +145,5 @@ build sandbox:
         - yarn build:client --project=sandbox
     artifacts:
         paths:
-            -dist/sandbox
+            - dist/sandbox
         expire_in: 50 minutes

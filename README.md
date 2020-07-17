@@ -16,7 +16,7 @@ The Schoolzone app could be started with the following commands,
 
 # Problems you might Run Into
 
-- Nil
+- Check for proper indentation and spaces
 
 # Lecture 32
 
