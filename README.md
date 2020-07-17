@@ -17,6 +17,7 @@ The Schoolzone app could be started with the following commands,
 # Problems you might Run Into
 
 - Check for proper indentation and spaces
+- Check linting and testing before commiting, have pre commit hooks.
 
 # Lecture 32
 

@@ -15,6 +15,7 @@ stages:
 cache: &global_cache
   paths:
     - node_modules/
+    - .env
   policy: pull
 
 install:
@@ -22,6 +23,7 @@ install:
   script:
     - yarn
     - yarn doc
+    - printenv >> .env
   cache:
     <<: *global_cache
     #overide the policy

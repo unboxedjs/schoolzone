@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LibModule } from 'frontend/shared/src/lib/lib.module';
+import { LayoutModule } from './layout/layout.module';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,6 +13,7 @@ describe('AppComponent', () => {
         HttpClientModule,
         RouterTestingModule.withRoutes([]),
         LibModule,
+        LayoutModule,
       ],
     }).compileComponents();
   }));
