@@ -5,7 +5,7 @@ stages:
   #dev checks
   - lint
   - test
-  #- document
+  - document
   #build
   - build
   #- dockerize
@@ -149,3 +149,24 @@ build sandbox:
         paths:
             - dist/sandbox
         expire_in: 50 minutes
+
+pages:
+  stage: document
+  dependecies:
+    - install
+    - test api
+    - test school
+    - test shared
+  script:
+    - printenv | grep CI >> pipeline.txt
+    - mv coverage/* public/
+    - mv documentation/* public/
+    - mv README.md public/
+    - mv LICENSE public/
+    - mv pipeline.txt public/
+    - mv template/ public/
+  cache: {}
+  artifacts:
+    paths:
+      - public
+    expire_in: 50 minutes
