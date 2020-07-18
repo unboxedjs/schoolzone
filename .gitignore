@@ -48,3 +48,6 @@ Thumbs.db
 
 #env
 .env
+
+#gcp key
+*key.json

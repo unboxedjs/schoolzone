@@ -8,17 +8,18 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Initiate Pipeline with .gitlab-ci.yml
+- Add GCP variables to the pipeline
+- Enocode gcp key with base64
+- add key file to git ignore
 
 # Terminal Commands Used
 
-- Nil
+- cat key.json | base64 > temp.txt
 
 # Problems you might Run Into
 
-- Check for proper indentation and spaces
-- Check linting and testing before commiting, have pre commit hooks.
+- Check for proper permissions while creating the service account key
 
-# Lecture 32
+# Lecture 33
 
-- GitLab Pipeline stages - Basics
+- Getting started with GCP
