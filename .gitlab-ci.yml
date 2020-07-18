@@ -152,7 +152,7 @@ build sandbox:
 
 pages:
   stage: document
-  dependecies:
+  dependencies:
     - install
     - test api
     - test school
