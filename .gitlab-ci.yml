@@ -159,12 +159,12 @@ pages:
     - test shared
   script:
     - printenv | grep CI >> pipeline.txt
-    - mv coverage/* public/
-    - mv documentation/* public/
+    - mv coverage/*/ public/
+    - mv documentation/*/ public/
     - mv README.md public/
     - mv LICENSE public/
     - mv pipeline.txt public/
-    - mv template/ public/
+    - mv template/index.html public/
   cache: {}
   artifacts:
     paths:
