@@ -8,19 +8,21 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Add Document stage
 - Add Dockerize stage
 - Add Deploy Stage
 - Add Badges
 
 # Terminal Commands Used
 
-- nil
+- gcloud auth list
+- gcloud activate-service-account --key-file \keyfile\path\key.json
+- docker tag hello-world gcr.io/-project-id-/hello:1.0.0
+- docker push gcr.io/-project-id-/hello:1.0.0
 
 # Problems you might Run Into
 
-- nil
+- Check teh commands in gcloud sdk to avoid waiting pipeline runs
 
-# Lecture 33
+# Lecture 35
 
-- GitLab Pipeline stages - Advanced
+- Angular Nest - Dockerize and Deploy

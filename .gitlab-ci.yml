@@ -1,5 +1,12 @@
 image: mhart/alpine-node:14.5
 
+variables:
+  SZ_ENV: $CI_COMMIT_REF_NAME
+  SZ_MONGO_DB: $CI_COMMIT_REF_NAME
+  GIT_DEPTH: 5
+  SZ_DOCKER_IMAGE: $CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA
+  SZ_DOCKER_HOST: gcr.io
+
 stages:
   - install
   #dev checks
@@ -8,9 +15,9 @@ stages:
   - document
   #build
   - build
-  #- dockerize
+  - dockerize
   #deploy
-  #- deploy
+  - deploy
 
 cache: &global_cache
   paths:
@@ -72,7 +79,7 @@ test api:
   script:
     - yarn test
   artifacts:
-    paths: 
+    paths:
       - coverage/backend
     expire_in: 50 minutes
 
@@ -81,7 +88,7 @@ test school:
   script:
     - yarn test:client --project=school
   artifacts:
-    paths: 
+    paths:
       - coverage/school
     expire_in: 50 minutes
 
@@ -90,65 +97,56 @@ test shared:
   script:
     - yarn test:client --project=shared
   artifacts:
-    paths: 
+    paths:
       - coverage/shared
     expire_in: 50 minutes
 
 #build stages
 
 build api:
-    stage: build
-    script:
-        - yarn build
-    artifacts:
-        paths:
-            - dist/api
-        expire_in: 50 minutes
+  stage: build
+  script:
+    - yarn build
+  artifacts:
+    paths:
+      - dist/api
+    expire_in: 50 minutes
 
 build school:
-    stage: build
-    script:
-        - yarn build:client --project=school
-    artifacts:
-        paths:
-            - dist/school
-        expire_in: 50 minutes
-
-build school:
-    stage: build
-    script:
-        - yarn build:client --project=school
-    artifacts:
-        paths:
-            - dist/school
-        expire_in: 50 minutes
+  stage: build
+  script:
+    - yarn build:client --project=school
+  artifacts:
+    paths:
+      - dist/school
+    expire_in: 50 minutes
 
 build admin:
-    stage: build
-    script:
-        - yarn build:client --project=admin
-    artifacts:
-        paths:
-            - dist/admin
-        expire_in: 50 minutes
+  stage: build
+  script:
+    - yarn build:client --project=admin
+  artifacts:
+    paths:
+      - dist/admin
+    expire_in: 50 minutes
 
 build super:
-    stage: build
-    script:
-        - yarn build:client --project=super
-    artifacts:
-        paths:
-            - dist/super
-        expire_in: 50 minutes
+  stage: build
+  script:
+    - yarn build:client --project=super
+  artifacts:
+    paths:
+      - dist/super
+    expire_in: 50 minutes
 
 build sandbox:
-    stage: build
-    script:
-        - yarn build:client --project=sandbox
-    artifacts:
-        paths:
-            - dist/sandbox
-        expire_in: 50 minutes
+  stage: build
+  script:
+    - yarn build:client --project=sandbox
+  artifacts:
+    paths:
+      - dist/sandbox
+    expire_in: 50 minutes
 
 pages:
   stage: document
@@ -170,3 +168,48 @@ pages:
     paths:
       - public
     expire_in: 50 minutes
+
+generate image:
+  stage: dockerize
+  image: docker:19.03.1
+  dependencies:
+    - build school
+    - build admin
+    - build super
+    - build sandbox
+    - build api
+  services:
+    - docker:19.03.1-dind
+  before_script:
+    - echo $SZ_GCP_KEY_JSON | base64 -d > /tmp/key.json
+    - docker login -u _json_key --password-stdin https://$SZ_DOCKER_HOST < /tmp/key.json
+    - export SZ_GCP_REG="${SZ_DOCKER_HOST}/${SZ_GCP_PROJECT_ID}/${CI_COMMIT_REF_NAME}"
+  script:
+    - docker build -t $SZ_DOCKER_IMAGE .
+    - docker tag $SZ_DOCKER_IMAGE $SZ_GCP_REG
+    - docker push $SZ_GCP_REG
+  after_script:
+    - rm /tmp/key.json
+
+deploy:
+  image: google/cloud-sdk:alpine
+  stage: deploy
+  cache: {}
+  dependencies: []
+  before_script:
+    - echo $SZ_GCP_KEY_JSON | base64 -d > /tmp/key.json
+    - export SZ_GCP_REG="${SZ_DOCKER_HOST}/${SZ_GCP_PROJECT_ID}/${CI_COMMIT_REF_NAME}:latest"
+    - export SZ_DEPLOY_NAME="sz-${CI_COMMIT_REF_NAME}"
+  script:
+    - gcloud auth activate-service-account --key-file /tmp/key.json --project=$SZ_GCP_PROJECT_ID
+    - gcloud config set project $SZ_GCP_PROJECT_ID
+    - gcloud config set compute/zone $SZ_GCP_DEPLOY_ZONE
+    - result=$(gcloud compute instances list | grep -q $SZ_DEPLOY_NAME; echo $?)
+    - >
+      if [ $result == 0 ]; then
+        gcloud compute instances update-container $SZ_DEPLOY_NAME --container-image $SZ_GCP_REG
+      else
+        gcloud compute instances create $SZ_DEPLOY_NAME --source-instance-template $CI_COMMIT_REF_NAME
+      fi
+  after_script:
+    - rm /tmp/key.json
