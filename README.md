@@ -8,21 +8,18 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Add Dockerize stage
-- Add Deploy Stage
-- Add Badges
+- create user schema and dto
+- create password hash with bcrypt
 
 # Terminal Commands Used
 
-- gcloud auth list
-- gcloud activate-service-account --key-file \keyfile\path\key.json
-- docker tag hello-world gcr.io/-project-id-/hello:1.0.0
-- docker push gcr.io/-project-id-/hello:1.0.0
+- yarn add bcrypt
+- yarn add -D @types/bcrypt
 
 # Problems you might Run Into
 
-- Check teh commands in gcloud sdk to avoid waiting pipeline runs
+- nil
 
-# Lecture 35
+# Lecture 37
 
-- Angular Nest - Dockerize and Deploy
+- Working with mongoDB in nestJS

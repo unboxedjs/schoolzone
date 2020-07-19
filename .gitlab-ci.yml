@@ -9,14 +9,11 @@ variables:
 
 stages:
   - install
-  #dev checks
   - lint
   - test
   - document
-  #build
   - build
   - dockerize
-  #deploy
   - deploy
 
 cache: &global_cache
@@ -168,6 +165,8 @@ pages:
     paths:
       - public
     expire_in: 50 minutes
+  only:
+    - develop
 
 generate image:
   stage: dockerize
@@ -190,6 +189,8 @@ generate image:
     - docker push $SZ_GCP_REG
   after_script:
     - rm /tmp/key.json
+  only:
+    - develop
 
 deploy:
   image: google/cloud-sdk:alpine
@@ -213,3 +214,5 @@ deploy:
       fi
   after_script:
     - rm /tmp/key.json
+  only:
+    - develop

@@ -37,11 +37,11 @@ export interface User extends Common {
   confirmPassword?: string;
 }
 
-export type Login = Pick<User, 'userName' | 'password'>;
-export type Register = Pick<
-  User,
-  'userName' | 'password' | 'confirmPassword' | 'role'
->;
+export type Login = Required<Pick<User, 'userName' | 'password'>>;
+export type Register = Required<
+  Pick<User, 'userName' | 'password' | 'confirmPassword' | 'role'>
+> &
+  Common;
 
 export interface BaseUser extends User, Contact {
   doj: Date;
