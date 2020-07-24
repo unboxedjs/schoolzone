@@ -81,3 +81,12 @@ export interface GeneralUser extends User, Contact {
   language?: string;
   Nationality?: string;
 }
+
+export interface AuthResponse {
+  token: string;
+}
+
+export interface JwtPayload extends Common {
+  userName: string;
+  role: Role;
+}

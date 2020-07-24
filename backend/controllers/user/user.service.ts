@@ -19,6 +19,22 @@ export class UserService {
     return newUser.save();
   }
 
+  async findAll(): Promise<User[]> {
+    return this.userModel.find().select(['-passwordHash']);
+  }
+
+  async findOne(_id: string): Promise<User> {
+    return this.userModel.findById(_id, { passwordHash: 0 });
+  }
+
+  async getByUsername(userName: string): Promise<User> {
+    return this.userModel.findOne({ userName });
+  }
+
+  async compareHash(password: string, hash: string): Promise<boolean> {
+    return bcrypt.compare(password, hash);
+  }
+
   private createHash(password: string): Promise<string> {
     return bcrypt.hash(password, this.saltRounds);
   }
