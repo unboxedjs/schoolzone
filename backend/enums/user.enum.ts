@@ -1,12 +1,13 @@
 export enum Role {
+  SUPER = 'super',
   ADMIN = 'admin',
   MANAGEMENT = 'management',
   OFFICE = 'office',
-  ASSISTANT = 'assistant',
   TEACHER = 'teacher',
-  NONTEACHER = 'nonteacher',
   PARENT = 'parent',
   STUDENT = 'student',
+  ASSISTANT = 'assistant',
+  NONTEACHER = 'nonteacher',
 }
 
 export enum BloodGroup {

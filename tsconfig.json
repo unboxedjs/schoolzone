@@ -19,5 +19,6 @@
       "@sz/interface": ["backend/interfaces"],
       "@sz/enum": ["backend/enums"]
     }
-  }
+  },
+  "exclude": ["dist"]
 }

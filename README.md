@@ -8,24 +8,19 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Add passwort an djwt dependencies.
-- Create JWT strategy
-- Create compare hash method
-- Create login endpoint
-- Create Auth Guard and implement it.
+- modify canActivate to accomadate global JwtAuthGuard
+- create allow an ddeny decorators for role guard to add meta data
+- modify failing test cases
 
 # Terminal Commands Used
 
-- yarn add @nestjs/jwt passport-jwt
-- yarn add -D @types/passport-jwt @types/passport
-- yarn add @nestjs/passport passport
-- yarn add -D @types/passport
-- nest g guard handlers/guards/auth
+- nest g gu handlers/guards/role
+- nest g d handlers/decorators/role
 
 # Problems you might Run Into
 
 - nil
 
-# Lecture 38
+# Lecture 39
 
-- JWT Authentication
+- Working with Guards

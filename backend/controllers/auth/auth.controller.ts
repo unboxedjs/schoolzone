@@ -9,6 +9,7 @@ import {
 import { Login, AuthResponse } from '@sz/interface';
 import { UserService } from '../user/user.service';
 import { AuthService } from './auth.service';
+import { Public } from 'backend/handlers/decorators/role.decorator';
 
 @Controller('auth')
 export class AuthController {
@@ -17,6 +18,7 @@ export class AuthController {
     private readonly authService: AuthService,
   ) {}
 
+  @Public()
   @Post()
   async login(@Body() { userName, password }: Login): Promise<AuthResponse> {
     const { passwordHash, _id } =
