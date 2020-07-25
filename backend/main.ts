@@ -5,6 +5,7 @@ import { config } from './config';
 import { GlobalInterceptor } from './handlers/interceptors/global.interceptor';
 import { JwtAuthGuard } from './handlers/guards/auth.guard';
 import { RoleGuard } from './handlers/guards/role.guard';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   const { appName, port, version } = config;
@@ -24,6 +25,7 @@ async function bootstrap() {
 
   app.setGlobalPrefix(version);
   app.useGlobalInterceptors(new GlobalInterceptor());
+  app.useGlobalPipes(new ValidationPipe());
 
   const reflector = app.get(Reflector);
   app.useGlobalGuards(new JwtAuthGuard(reflector), new RoleGuard(reflector));

@@ -8,19 +8,18 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- modify canActivate to accomadate global JwtAuthGuard
-- create allow an ddeny decorators for role guard to add meta data
-- modify failing test cases
+- Add validation rules to POST request DTOs.
+- Add Custom validators using the decorators.
 
 # Terminal Commands Used
 
-- nest g gu handlers/guards/role
-- nest g d handlers/decorators/role
+- yarn add class-validator
+- yarn add class-transformer
 
 # Problems you might Run Into
 
 - nil
 
-# Lecture 39
+# Lecture 40 & 41
 
-- Working with Guards
+- Implementing Validation and Custom Validators

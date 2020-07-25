@@ -6,10 +6,11 @@ import {
   HttpStatus,
   NotFoundException,
 } from '@nestjs/common';
-import { Login, AuthResponse } from '@sz/interface';
+import { AuthResponse } from '@sz/interface';
 import { UserService } from '../user/user.service';
 import { AuthService } from './auth.service';
 import { Public } from 'backend/handlers/decorators/role.decorator';
+import { LoginDTO } from 'backend/schemas/user.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -20,7 +21,7 @@ export class AuthController {
 
   @Public()
   @Post()
-  async login(@Body() { userName, password }: Login): Promise<AuthResponse> {
+  async login(@Body() { userName, password }: LoginDTO): Promise<AuthResponse> {
     const { passwordHash, _id } =
       (await this.userService.getByUsername(userName)) || {};
 

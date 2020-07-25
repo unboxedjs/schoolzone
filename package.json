@@ -51,6 +51,8 @@
     "@typescript-eslint/eslint-plugin": "3.0.2",
     "@typescript-eslint/parser": "3.0.2",
     "bcrypt": "^5.0.0",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.12.2",
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
     "eslint": "7.1.0",
@@ -105,5 +107,9 @@
     "collectCoverage": true,
     "coverageDirectory": "../coverage/backend",
     "testEnvironment": "node"
+  },
+  "moduleNameMapper": {
+    "^@sz/interface$": "<rootDir>/interfaces",
+    "^@sz/enum$": "<rootDir>/enums"
   }
 }
