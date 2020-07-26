@@ -8,18 +8,17 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Add validation rules to POST request DTOs.
-- Add Custom validators using the decorators.
+- Add Exception handling in global level
+- Add enum values for error messages
 
 # Terminal Commands Used
 
-- yarn add class-validator
-- yarn add class-transformer
+- nil
 
 # Problems you might Run Into
 
 - nil
 
-# Lecture 40 & 41
+# Lecture 42
 
-- Implementing Validation and Custom Validators
+- Error Handling through exceptions

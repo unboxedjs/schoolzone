@@ -1,6 +1,6 @@
 // dtos: class - transfer object in the post,put,delete request
 
-import { Role } from '@sz/enum';
+import { Role, ErrorCode } from '@sz/enum';
 import { Schema } from 'mongoose';
 import { IsNotEmpty, IsEnum } from 'class-validator';
 import { Compare } from 'backend/handlers/decorators/compare.decorator';
@@ -15,7 +15,7 @@ export class LoginDTO {
 
 export class CreateUserDTO extends LoginDTO {
   @IsNotEmpty()
-  @Compare('password', { message: 'Passwords do not match' })
+  @Compare('password', { message: ErrorCode.A002 })
   confirmPassword: string;
 
   @IsEnum(Role)

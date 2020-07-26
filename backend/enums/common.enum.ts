@@ -18,3 +18,8 @@ export enum STATUS {
   ASSIGNED = 'assigned',
   UNASSIGNED = 'unassigned',
 }
+
+export enum ErrorCode {
+  A001 = 'Invalid Jwt',
+  A002 = 'Password Mismatch',
+}

@@ -1,4 +1,4 @@
-import { NestFactory, Reflector } from '@nestjs/core';
+import { NestFactory, Reflector, HttpAdapterHost } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { config } from './config';
@@ -6,6 +6,7 @@ import { GlobalInterceptor } from './handlers/interceptors/global.interceptor';
 import { JwtAuthGuard } from './handlers/guards/auth.guard';
 import { RoleGuard } from './handlers/guards/role.guard';
 import { ValidationPipe } from '@nestjs/common';
+import { GlobalException } from './handlers/exceptions/global.exception';
 
 async function bootstrap() {
   const { appName, port, version } = config;
@@ -20,14 +21,15 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
+  const { httpAdapter } = app.get(HttpAdapterHost);
+  const reflector = app.get(Reflector);
 
   SwaggerModule.setup('swagger', app, document);
 
   app.setGlobalPrefix(version);
   app.useGlobalInterceptors(new GlobalInterceptor());
+  app.useGlobalFilters(new GlobalException(httpAdapter));
   app.useGlobalPipes(new ValidationPipe());
-
-  const reflector = app.get(Reflector);
   app.useGlobalGuards(new JwtAuthGuard(reflector), new RoleGuard(reflector));
 
   await app.listen(port, () => {
