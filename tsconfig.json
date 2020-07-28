@@ -20,5 +20,6 @@
       "@sz/enum": ["backend/enums"]
     }
   },
-  "exclude": ["dist"]
+  "exclude": ["dist", "**/tmp/", "frontend"],
+  "include": ["backend"]
 }

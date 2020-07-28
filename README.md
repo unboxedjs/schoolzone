@@ -8,17 +8,19 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Add Exception handling in global level
-- Add enum values for error messages
+- Format Log with bunyan
+- Add gcp stackdriver or aws cloud logging streams.
 
 # Terminal Commands Used
 
-- nil
+- yarn add bunyan
+- yarn add -D @types/bunyan
+- yarn add @google-cloud/logging-bunyan
 
 # Problems you might Run Into
 
 - nil
 
-# Lecture 42
+# Lecture 43
 
-- Error Handling through exceptions
+- Logging with Interceptors

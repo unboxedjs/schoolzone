@@ -1,6 +1,12 @@
-import { Catch, ArgumentsHost, BadRequestException } from '@nestjs/common';
+import {
+  Catch,
+  ArgumentsHost,
+  BadRequestException,
+  HttpStatus,
+} from '@nestjs/common';
 import { BaseExceptionFilter } from '@nestjs/core';
 import { KeyValue } from '@sz/interface';
+import { fatal, warn } from 'backend/library/logger';
 
 @Catch()
 export class GlobalException extends BaseExceptionFilter {
@@ -13,6 +19,11 @@ export class GlobalException extends BaseExceptionFilter {
             code: error.code,
           })
         : exception;
+    const request = host.switchToHttp().getRequest();
+    const statusCode = error?.status || error?.response['statusCode'];
+    statusCode === HttpStatus.INTERNAL_SERVER_ERROR
+      ? fatal(`${appException}`)
+      : warn({ error: error, user: request.user });
     super.catch(appException, host);
   }
 }

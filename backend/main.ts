@@ -7,11 +7,14 @@ import { JwtAuthGuard } from './handlers/guards/auth.guard';
 import { RoleGuard } from './handlers/guards/role.guard';
 import { ValidationPipe } from '@nestjs/common';
 import { GlobalException } from './handlers/exceptions/global.exception';
+import { info } from './library/logger';
 
 async function bootstrap() {
   const { appName, port, version } = config;
   const url = `/${version}`;
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    logger: ['warn', 'error'],
+  });
 
   const options = new DocumentBuilder()
     .addServer(`${url}`)
@@ -33,7 +36,7 @@ async function bootstrap() {
   app.useGlobalGuards(new JwtAuthGuard(reflector), new RoleGuard(reflector));
 
   await app.listen(port, () => {
-    console.info(`${appName} is running in http://localhost:${port}${url}`);
+    info(`${appName} is running in http://localhost:${port}${url}`);
   });
 }
 bootstrap();
