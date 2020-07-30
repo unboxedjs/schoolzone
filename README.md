@@ -8,19 +8,20 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Format Log with bunyan
-- Add gcp stackdriver or aws cloud logging streams.
+- Add helmet middleware to set security-related HTTP headers
+- Enable cors
+- Add CSRF to revent unauthorized commands from web app
+- Add express-rate-limit to protect applications from brute-force attacks
 
 # Terminal Commands Used
 
-- yarn add bunyan
-- yarn add -D @types/bunyan
-- yarn add @google-cloud/logging-bunyan
+- yarn add helmet express-rate-limit
+- yarn add -D @types/helmet @types/express-rate-limit
 
 # Problems you might Run Into
 
 - nil
 
-# Lecture 43
+# Lecture 44
 
-- Logging with Interceptors
+- Middleware and Security

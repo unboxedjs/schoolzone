@@ -25,7 +25,7 @@ cache: &global_cache
 install:
   stage: install
   script:
-    - yarn
+    - yarn install --prod
     - yarn doc
     - printenv >> .env
   cache:
