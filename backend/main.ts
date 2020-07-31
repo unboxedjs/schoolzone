@@ -24,13 +24,18 @@ async function bootstrap() {
     .setTitle(appName)
     .setDescription('The API Documentation')
     .setVersion(version)
+    .addBearerAuth()
+    .setContact('Suren K', 'jsworkbench.com', 'suren@jsworkbench.com')
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
   const { httpAdapter } = app.get(HttpAdapterHost);
   const reflector = app.get(Reflector);
 
-  SwaggerModule.setup('swagger', app, document);
+  SwaggerModule.setup('swagger', app, document, {
+    customSiteTitle: `${appName} Api Docs`,
+    customCss: '.swagger-ui .topbar{display:none}',
+  });
 
   app.setGlobalPrefix(version);
   app.useGlobalInterceptors(new GlobalInterceptor());

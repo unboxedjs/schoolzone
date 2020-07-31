@@ -9,6 +9,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { config } from './config';
 import { UserModule } from './controllers/user/user.module';
+import { LogController } from './controllers/log/log.controller';
 import * as lb from '@google-cloud/logging-bunyan';
 import rateLimit from 'express-rate-limit';
 
@@ -21,7 +22,7 @@ import rateLimit from 'express-rate-limit';
     }),
     UserModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, LogController],
   providers: [AppService],
 })
 export class AppModule implements NestModule {
@@ -39,7 +40,7 @@ export class AppModule implements NestModule {
           message: `Too many failed requests, please try again after 1 minute.`,
         }),
       )
-      .exclude({ path: 'log', method: RequestMethod.ALL })
+      .exclude('/(.*)/logs(.*)')
       .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
 }

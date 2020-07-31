@@ -2,8 +2,6 @@ import {
   Controller,
   Post,
   Body,
-  HttpException,
-  HttpStatus,
   NotFoundException,
   ForbiddenException,
 } from '@nestjs/common';
@@ -12,17 +10,22 @@ import { UserService } from '../user/user.service';
 import { AuthService } from './auth.service';
 import { Public } from 'backend/handlers/decorators/role.decorator';
 import { LoginDTO } from 'backend/schemas/user.dto';
-import { ErrorCode } from '@sz/enum';
+import { ErrorCode, Controls, CRUD } from '@sz/enum';
+import { ApiTags } from '@nestjs/swagger';
+import { Api } from 'backend/handlers/decorators/api.decorators';
 
-@Controller('auth')
+const name = Controls.Auth;
+
+@ApiTags(name)
+@Controller(name)
 export class AuthController {
   constructor(
     private readonly userService: UserService,
     private readonly authService: AuthService,
   ) {}
 
-  @Public()
   @Post()
+  @Api(name, CRUD.LOGIN)
   async login(@Body() { userName, password }: LoginDTO): Promise<AuthResponse> {
     const { passwordHash, _id } =
       (await this.userService.getByUsername(userName)) || {};

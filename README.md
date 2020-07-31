@@ -8,20 +8,20 @@ The Schoolzone app could be started with the following commands,
 
 # TODO List
 
-- Add helmet middleware to set security-related HTTP headers
-- Enable cors
-- Add CSRF to revent unauthorized commands from web app
-- Add express-rate-limit to protect applications from brute-force attacks
+- Add Swagger Details
+- Add logger endpoint for client logging
+- Add exclude paths to avoid multiple logging
+- Create enums for controls and actions
+- Create Decorator to apply multiple decorators thereby keeping code clean
 
 # Terminal Commands Used
 
-- yarn add helmet express-rate-limit
-- yarn add -D @types/helmet @types/express-rate-limit
+- Nil
 
 # Problems you might Run Into
 
 - nil
 
-# Lecture 44
+# Lecture 45
 
-- Middleware and Security
+- NestJS Tweaks and Rechecks

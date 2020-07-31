@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
-import { Actions } from '@sz/enum';
+import { Actions, Role, Controls, CRUD } from '@sz/enum';
 import { HttpStatus } from '@nestjs/common';
 
 export interface AppStatus {
@@ -19,6 +19,10 @@ export interface Permissions {
 
 export interface KeyValue {
   [key: string]: string | KeyValue | number;
+}
+
+export interface ObjectPair {
+  [k: string]: string;
 }
 
 export interface MongoError {
@@ -42,3 +46,11 @@ export interface ErrorResponse {
   message: string | string[];
   error: string | KeyValue | number;
 }
+
+type AccessKeys = 'isPublic' | 'allow' | 'deny';
+
+export type AccessValues = {
+  [K in AccessKeys]?: boolean | Role[];
+};
+
+export type ApiOptions = [Controls, CRUD, AccessValues?];

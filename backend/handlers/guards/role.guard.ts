@@ -13,7 +13,7 @@ export class RoleGuard implements CanActivate {
     const allow = this.reflector.get<Role[]>('allow', context.getHandler());
     const deny = this.reflector.get<Role[]>('deny', context.getHandler());
 
-    if (!allow && !deny) {
+    if (!allow?.length && !deny?.length) {
       return true;
     }
 
