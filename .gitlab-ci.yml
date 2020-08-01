@@ -166,7 +166,7 @@ pages:
       - public
     expire_in: 50 minutes
   only:
-    - develop
+    - master
 
 generate image:
   stage: dockerize
@@ -190,7 +190,7 @@ generate image:
   after_script:
     - rm /tmp/key.json
   only:
-    - develop
+    - master
 
 deploy:
   image: google/cloud-sdk:alpine
@@ -215,4 +215,4 @@ deploy:
   after_script:
     - rm /tmp/key.json
   only:
-    - develop
+    - master

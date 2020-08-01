@@ -11,8 +11,8 @@ import { AppStatus } from '@sz/interface';
 })
 export class AppComponent {
   constructor(private general: GeneralService) {
-    // this.general.$appStatus.subscribe((status: AppStatus) => {
-    //   console.info(status.message);
-    // });
+    this.general.$appStatus.subscribe((status: AppStatus) => {
+      console.info(status.message);
+    });
   }
 }

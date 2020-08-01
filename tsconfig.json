@@ -21,6 +21,5 @@
       "@sz/utils": ["backend/utils"]
     }
   },
-  "exclude": ["dist", "**/tmp/", "frontend"],
-  "include": ["backend"]
+  "exclude": ["dist", "**/tmp/"]
 }

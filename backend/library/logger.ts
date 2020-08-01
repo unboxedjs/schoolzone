@@ -36,9 +36,8 @@ export const error = log.error.bind(log);
 export const fatal = log.fatal.bind(log);
 
 export const excludePaths: string[] = [
-  '',
-  Controls.Logs,
-  `${Controls.Logs}/fetch`,
-].map(url => `/${version}/${url}`);
+  `/${version}`,
+  ...[Controls.Logs, `${Controls.Logs}/fetch`].map(url => `/${version}/${url}`),
+];
 
 export const AllowLog = (url: string): boolean => !excludePaths.includes(url);

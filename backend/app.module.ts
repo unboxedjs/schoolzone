@@ -40,7 +40,11 @@ export class AppModule implements NestModule {
           message: `Too many failed requests, please try again after 1 minute.`,
         }),
       )
-      .exclude('/(.*)/logs(.*)')
+      .exclude(
+        '/(.*)/logs(.*)',
+        { path: `/${config.version}/`, method: RequestMethod.GET },
+        { path: `/${config.version}`, method: RequestMethod.GET },
+      )
       .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
 }
