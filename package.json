@@ -116,7 +116,8 @@
     "testEnvironment": "node",
     "moduleNameMapper": {
       "^@sz/interface$": "<rootDir>/interfaces",
-      "^@sz/enum$": "<rootDir>/enums"
+      "^@sz/enum$": "<rootDir>/enums",
+      "^@sz/utils$": "<rootDir>/utils"
     }
   }
 }

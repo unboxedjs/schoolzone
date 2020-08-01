@@ -3,7 +3,7 @@ import { ApiOptions } from '@sz/interface';
 import { Public, Allow, Deny } from './role.decorator';
 import { ApiBearerAuth, ApiOperation } from '@nestjs/swagger';
 import { Role } from '@sz/enum';
-import { constructOperation } from 'backend/utils';
+import { constructOperation } from '@sz/utils';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const Api = (
