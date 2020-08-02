@@ -57,7 +57,8 @@
                 "glob": "**/*",
                 "input": "frontend/shared/src/assets",
                 "output": "/assets/"
-              }
+              },
+              "frontend/school/src/manifest.webmanifest"
             ],
             "styles": [
               "frontend/shared/src/global.scss",
@@ -95,7 +96,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "frontend/school/ngsw-config.json"
             }
           }
         },

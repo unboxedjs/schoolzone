@@ -24,6 +24,16 @@
       }
     }
   }
+
+  @include mobile {
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    ul {
+      flex-direction: row;
+    }
+    @include hide-overflow;
+  }
 }
 
 img {

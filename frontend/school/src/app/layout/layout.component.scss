@@ -9,14 +9,34 @@
     background: #151b26;
     text-align: center;
     box-shadow: 1px 1px 5px color(black);
+    @include mobile {
+      width: 100vw;
+      height: 80px;
+    }
   }
   sz-content {
     flex-grow: 1;
     margin-left: size(margin);
     margin-bottom: size(margin);
+    @include mobile {
+      margin-right: size(margin);
+    }
+    @include tablet {
+      margin-right: size(margin);
+    }
   }
   sz-sidebar {
     width: 25vw;
     margin: 0 size(margin) size(margin) size(margin);
+    @include mobile {
+      display: none;
+    }
+    @include tablet {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column-reverse;
   }
 }

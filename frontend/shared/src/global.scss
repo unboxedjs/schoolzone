@@ -11,6 +11,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  @include mobile {
+    --line-thick-size: 4px;
+    --line-base-size: 2px;
+    --margin-base-size: 2vw;
+    --padding-base-size: 2vw;
+    --subnav-height-size: 50px;
+  }
 }
 
 html,

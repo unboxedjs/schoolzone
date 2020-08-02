@@ -9,6 +9,15 @@
   }
 }
 
+// To hide overflow and maintain functionality
+@mixin hide-overflow {
+  scrollbar-width: none; /* Firefox 64 */
+  -ms-overflow-style: none; /* Internet Explorer 11 */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 // To quickly centre vertically
 @mixin center-vertically {
   position: absolute;
@@ -76,4 +85,23 @@
 }
 @function size($type: heading, $variant: base) {
   @return var(--#{$type}-#{$variant}-size);
+}
+
+// Media Queries
+$SmallScr: 767px;
+$MediumScr: 959px;
+$LandscapeScr: 1280px;
+$LargeScr: 1600px;
+$ExtraLargeScr: 1920px;
+
+@mixin mobile {
+  @media (max-width: #{$SmallScr}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$MediumScr}) {
+    @content;
+  }
 }

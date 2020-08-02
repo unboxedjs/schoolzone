@@ -19,5 +19,8 @@
       x: auto;
       y: scroll;
     }
+    @include mobile {
+      @include hide-overflow;
+    }
   }
 }

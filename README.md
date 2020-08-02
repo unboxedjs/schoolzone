@@ -1,27 +1,30 @@
 # Schoolzone
 
+[Demo App](https://www.master.sz.jsworkbench.com/) - Hosted Application reference
+[Documentation](https://udemylectures.gitlab.io/schoolzone/) - Code Coverage and Documentation
+
 The Schoolzone app could be started with the following commands,
 
     Create .env File
     yarn
     yarn start
 
-# TODO List
+### TODO List
 
-- Add Swagger Details
-- Add logger endpoint for client logging
-- Add exclude paths to avoid multiple logging
-- Create enums for controls and actions
-- Create Decorator to apply multiple decorators thereby keeping code clean
+- Check through Google Lighthouse report and improve performance.
+- Implement PWA
+- Covert layout with responsive styling for mobile
 
-# Terminal Commands Used
+### Terminal Commands Used
 
-- Nil
+- ng add @angular/pwa --project school
+- ng build --prod
+- http-server -p 8080 -c-1 dist/school
 
-# Problems you might Run Into
+### Problems you might Run Into
 
 - nil
 
-# Lecture 45
+### Lecture 47
 
-- NestJS Tweaks and Rechecks
+- Progressive Web App
