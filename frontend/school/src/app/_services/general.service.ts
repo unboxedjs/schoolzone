@@ -5,6 +5,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class GeneralService {
-  $appStatus = this.http.get('v1');
+  appStatus$ = this.http.get('v1');
   constructor(private http: HttpClient) {}
 }

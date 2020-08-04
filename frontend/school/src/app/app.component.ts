@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { GeneralService } from './_services/general.service';
+import { Store } from '@ngrx/store';
+import { LoadConfig } from './settings/+state/config.action';
+import { Observable } from 'rxjs';
 import { AppStatus } from '@sz/interface';
+import { SelectStatus } from './settings/+state/config.selector';
 
 @Component({
   selector: 'sz-root',
@@ -10,9 +13,15 @@ import { AppStatus } from '@sz/interface';
   styles: [],
 })
 export class AppComponent {
-  constructor(private general: GeneralService) {
-    this.general.$appStatus.subscribe((status: AppStatus) => {
-      console.info(status.message);
+  appStatus$: Observable<AppStatus> = this.store.select(SelectStatus);
+
+  constructor(private store: Store) {
+    this.appStatus$.subscribe(status => {
+      console.log(status?.message);
     });
+  }
+
+  ngOnInit() {
+    this.store.dispatch(LoadConfig());
   }
 }

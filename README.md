@@ -11,20 +11,23 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Check through Google Lighthouse report and improve performance.
-- Implement PWA
-- Covert layout with responsive styling for mobile
+- Add ngrx state and its dependencies
+- Familarize with actions, reducers, effects and selectors.
 
 ### Terminal Commands Used
 
-- ng add @angular/pwa --project school
-- ng build --prod
-- http-server -p 8080 -c-1 dist/school
+- yarn add @ngrx/{store,effects,entity,store-devtools,router-store,data}
+- yarn add @ngrx/schematics --dev
+- ng generate @ngrx/schematics:store State --root --module app.module.ts
+- ng add @ngrx/router-store
+- ng add @ngrx/entity
+- ng add @ngrx/data
 
 ### Problems you might Run Into
 
-- nil
+- do yarn install priorly since package manager might conflict.
+- check whether schematics is added as dev dependency
 
-### Lecture 47
+### Lecture 48
 
-- Progressive Web App
+- State Management with NgRx
