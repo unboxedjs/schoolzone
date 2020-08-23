@@ -1,0 +1,16 @@
+<ul>
+  <li
+    [routerLink]="firstItem.link"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <h3>{{firstItem.name}}</h3>
+  </li>
+  <li
+    [routerLink]="[item.link]"
+    routerLinkActive="active"
+    *ngFor="let item of tabs"
+  >
+    <h3>{{item.name}}</h3>
+  </li>
+</ul>

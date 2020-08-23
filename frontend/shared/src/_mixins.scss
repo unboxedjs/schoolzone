@@ -83,7 +83,7 @@
 @function color($type: primary, $variant: base) {
   @return var(--#{$type}-#{$variant}-color);
 }
-@function size($type: heading, $variant: base) {
+@function size($type: base, $variant: base) {
   @return var(--#{$type}-#{$variant}-size);
 }
 

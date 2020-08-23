@@ -12,6 +12,12 @@
 }
 
 @font-face {
+  font-family: mBold;
+  src: url('assets/fonts/Montserrat-Bold.ttf');
+  font-display: swap;
+}
+
+@font-face {
   font-family: mRegular;
   src: url('assets/fonts/Montserrat-Medium.ttf');
   font-display: swap;
@@ -49,13 +55,22 @@
   --disabled-dark-color: #888;
   --disabled-base-color: #dddddd;
   --disabled-light-color: #dcdcdc;
+  --field-light-color: gainsboro;
 
   // Sizes
+  --base-base-size: 16px;
+  --line-bold-size: 8px;
   --line-thick-size: 4px;
   --line-base-size: 2px;
   --margin-base-size: 1vw;
+  --margin-lg-size: 2vw;
   --padding-base-size: 1vw;
+  --padding-lg-size: 2vw;
   --subnav-height-size: 30px;
+  --image-card-size: 5vw;
+  --font-base-size: 12px;
+  --icon-base-size: 2vw;
+  --icon-min-size: 25px;
 }
 
 // Mixin breakpoint

@@ -1,0 +1,136 @@
+<div class="page">
+  <h1>Input Fields</h1>
+
+  <div class="case">
+    <h5>1. Simple Input</h5>
+    <div class="row between-xs">
+      <sz-input
+        class="col-sm-5"
+        clearable="true"
+        length="20"
+        hint="Don't disclose <strong>personal info</strong>"
+        name="Input Type - Text"
+      ></sz-input>
+      <sz-textarea
+        class="col-sm-5"
+        name="Textarea"
+        length="255"
+        hint="Most attributes are <strong>similar</strong>"
+      >
+      </sz-textarea>
+    </div>
+  </div>
+
+  <div class="case">
+    <h5>2. Input Types and Error</h5>
+    <div class="row">
+      <sz-input
+        class="col-sm-5"
+        required="true"
+        type="email"
+        name="Email"
+      ></sz-input>
+      <sz-input
+        class="col-sm-5"
+        type="password"
+        name="Password"
+        [control]="sampleControl"
+      ></sz-input>
+    </div>
+  </div>
+
+  <div class="case">
+    <h5>3. Prefix and Suffix</h5>
+    <div class="row">
+      <sz-input
+        class="col-sm-3"
+        type="tel"
+        name="Telephone"
+        telCode="+1"
+        initialValue="458-689-1435"
+        clearable="true"
+      ></sz-input>
+      <sz-input class="col-sm-3" name="Simple Date" type="date"></sz-input>
+    </div>
+  </div>
+
+  <div class="case">
+    <h5>4. Checkbox</h5>
+    <div class="row between-xs">
+      <sz-checkbox name="Simple"></sz-checkbox>
+      <sz-checkbox name="Indeterminate" [indeterminate]="true"></sz-checkbox>
+      <sz-checkbox
+        name="Disabled"
+        [initialValue]="true"
+        [disabled]="true"
+      ></sz-checkbox>
+      <sz-checkbox
+        name="Checked Warn"
+        [initialValue]="true"
+        color="warn"
+      ></sz-checkbox>
+    </div>
+  </div>
+
+  <div class="case">
+    <h5>5. Radio Button</h5>
+    <div class="row">
+      <sz-radio
+        name="Choose Gender"
+        [options]="options"
+        [control]="radioControl"
+      ></sz-radio>
+    </div>
+  </div>
+
+  <div class="case">
+    <h5>6. Select options</h5>
+    <div class="row between-xs">
+      <sz-select
+        [options]="selectOptions"
+        class="col-sm-5"
+        hint="Choose your <strong>priority</strong>"
+        name="Select params similar to input type"
+      ></sz-select>
+    </div>
+  </div>
+
+  <div class="case">
+    <h5>7. Responsiveness, Appearance and Color</h5>
+    <div class="row">
+      <sz-input
+        class="col-sm-4"
+        name="Standard Input - Disabled"
+        appearance="standard"
+        color="primary"
+        disabled="true"
+      ></sz-input>
+    </div>
+    <div class="row">
+      <sz-input
+        class="col-sm-6"
+        name="Fill Input"
+        appearance="fill"
+        color="accent"
+      ></sz-input>
+    </div>
+    <div class="row">
+      <sz-input
+        class="col-sm-8"
+        name="Outline Input"
+        appearance="outline"
+        color="warn"
+      ></sz-input>
+    </div>
+    <div class="row">
+      <sz-input
+        class="col-xs-12
+      col-md-6
+      col-lg-4"
+        name="Legacy Input - Required"
+        appearance="legacy"
+        required="true"
+      ></sz-input>
+    </div>
+  </div>
+</div>

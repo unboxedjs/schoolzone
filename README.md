@@ -11,23 +11,18 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Add ngrx state and its dependencies
-- Familarize with actions, reducers, effects and selectors.
+- Add control components like inputs, buttons, checkbox etc,.
+- Have the controls documented if required (npm package:ngx-markdown).
 
 ### Terminal Commands Used
 
-- yarn add @ngrx/{store,effects,entity,store-devtools,router-store,data}
-- yarn add @ngrx/schematics --dev
-- ng generate @ngrx/schematics:store State --root --module app.module.ts
-- ng add @ngrx/router-store
-- ng add @ngrx/entity
-- ng add @ngrx/data
+- ng g c inputFields --project=sandbox
+- ng serve --serve-path=sandbox --project=sandbox
 
 ### Problems you might Run Into
 
-- do yarn install priorly since package manager might conflict.
-- check whether schematics is added as dev dependency
+- Nil
 
-### Lecture 48
+### Lecture 49
 
-- State Management with NgRx
+- Adding Control Components

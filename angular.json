@@ -408,7 +408,7 @@
       },
       "root": "frontend/sandbox",
       "sourceRoot": "frontend/sandbox/src",
-      "prefix": "sz",
+      "prefix": "demo",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

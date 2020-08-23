@@ -1,0 +1,12 @@
+@import '_mixins';
+
+mat-radio-group {
+  width: 100%;
+  mat-radio-button {
+    margin-right: size(margin);
+  }
+}
+label {
+  font-family: aRegular;
+  margin-right: size(margin);
+}

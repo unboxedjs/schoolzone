@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
-import { MaterialModule } from './material.module';
 import { LogoComponent } from './logo/logo.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { ControlsModule } from './controls/controls.module';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-const importAndExport = [MaterialModule];
+const importAndExport = [
+  ControlsModule,
+  MatIconModule,
+  MatDialogModule,
+  MatSnackBarModule,
+];
 const declareAndExport = [LogoComponent];
 @NgModule({
-  imports: [...importAndExport],
+  imports: [...importAndExport, BrowserModule],
   exports: [...importAndExport, ...declareAndExport],
   declarations: [...declareAndExport],
 })
