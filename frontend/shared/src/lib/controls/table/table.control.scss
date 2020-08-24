@@ -5,7 +5,7 @@ mat-table {
   width: 100%;
   font-family: mRegular;
   mat-cell {
-    color: color(black);
+    color: color(fg);
   }
 }
 
@@ -28,5 +28,5 @@ mat-cell {
   font-family: aBold;
   font-size: 12px;
   font-weight: 500;
-  color: rgba(0, 0, 0, 0.54) !important;
+  color: color(vertical, header) !important;
 }

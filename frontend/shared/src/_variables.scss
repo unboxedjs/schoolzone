@@ -40,7 +40,8 @@
   //colors
   --white-base-color: #f4f4f4;
   --black-base-color: #1e1f21;
-  --app-base-color: #f4f4f4;
+  --fg-base-color: #1e1f21;
+  --view-base-color: white;
   --primary-base-color: #1976d2;
   --secondary-base-color: #616161;
   --secondary-light-color: #c4c4c4;
@@ -52,10 +53,12 @@
   --nav-base-color: #151b26;
   --active-base-color: #444951;
   --hover-base-color: #0b0f15;
+  --hover-main-color: #0b0f15;
   --disabled-dark-color: #888;
   --disabled-base-color: #dddddd;
   --disabled-light-color: #dcdcdc;
   --field-light-color: gainsboro;
+  --vertical-header-color: rgba(0, 0, 0, 0.54);
 
   // Sizes
   --base-base-size: 16px;

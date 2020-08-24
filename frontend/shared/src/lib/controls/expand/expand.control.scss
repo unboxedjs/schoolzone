@@ -13,8 +13,8 @@
 }
 
 mat-expansion-panel::ng-deep {
-  background: transparent;
-  color: color(black);
+  background: transparent !important;
+  color: color(fg);
   mat-expansion-panel-header {
     font-family: mRegular;
     padding: 0;

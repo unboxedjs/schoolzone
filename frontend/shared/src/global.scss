@@ -45,7 +45,32 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: color(hover);
+  background: color(hover, main);
+}
+
+.dark-theme {
+  @include angular-material-theme($sz-dark-theme);
+  --white-base-color: #f4f4f4;
+  --black-base-color: #1e1f21;
+  --fg-base-color: #f4f4f4;
+  --view-base-color: #212121;
+  --primary-base-color: #1976d2;
+  --secondary-base-color: #616161;
+  --secondary-light-color: #3c3c3c;
+  --accent-base-color: #7f6196;
+  --error-base-color: #ff6e6e;
+  --warn-base-color: #847317;
+  --gentle-base-color: #0f4e1a;
+  --bg-base-color: #303030;
+  --nav-base-color: #1b1b1b;
+  --active-base-color: #444951;
+  --hover-base-color: #495c78;
+  --hover-main-color: #0b0f15;
+  --disabled-dark-color: #888;
+  --disabled-base-color: #363636;
+  --disabled-light-color: #3d3d3d;
+  --field-light-color: #2c2c2c;
+  --vertical-header-color: rgba(255, 255, 255, 0.7);
 }
 
 // Typography
@@ -54,7 +79,7 @@ h1 {
   font-family: aRegular;
   font-weight: normal;
   font-size: 28px;
-  color: color(black);
+  color: color(fg);
   font-variant: small-caps;
   user-select: none;
 }
@@ -104,7 +129,7 @@ h6 {
 }
 
 p {
-  color: color(black);
+  color: color(fg);
   font-family: aRegular;
   font-weight: lighter;
 }
@@ -157,7 +182,7 @@ mat-icon {
   cursor: pointer;
   user-select: none;
   &:hover {
-    color: color(hover);
+    color: color(hover, main);
   }
 }
 
@@ -212,4 +237,12 @@ span.link {
     justify-content: flex-end;
     margin-right: calc(#{size(padding)} * -1);
   }
+}
+
+.dark-theme .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: #383838;
+}
+
+input {
+  color: color(fg) !important;
 }

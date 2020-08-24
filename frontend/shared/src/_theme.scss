@@ -131,3 +131,20 @@ $sz-light-theme: (
   foreground: map_merge($mat-light-theme-foreground, $sz-light-theme-foreground),
   background: map_merge($mat-light-theme-background, $sz-light-theme-background),
 );
+
+$sz-dark-theme-foreground: (
+  base: color(white),
+);
+
+$sz-dark-theme-background: (
+  background: color(black),
+);
+
+$sz-dark-theme: (
+  primary: mat-palette($sz-primary),
+  accent: mat-palette($sz-accent),
+  warn: mat-palette($sz-warn),
+  is-dark: true,
+  foreground: map_merge($mat-dark-theme-foreground, $sz-dark-theme-foreground),
+  background: map_merge($mat-dark-theme-background, $sz-dark-theme-background),
+);

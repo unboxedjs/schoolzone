@@ -20,7 +20,7 @@
       }
       &:hover:not([class^='active']) {
         h3 {
-          color: color(hover);
+          color: color(hover, main);
         }
       }
     }

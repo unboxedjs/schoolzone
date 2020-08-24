@@ -23,4 +23,17 @@
       <sz-spinner value="75"></sz-spinner>
     </div>
   </div>
+  <div class="case">
+    <h5>3. Change Theme</h5>
+    <div class="row">
+      <sz-button
+        (click)="changeTheme()"
+        icon="{{ darkTheme ? 'switch_left' : 'switch_right' }}"
+        type="icon"
+      ></sz-button>
+    </div>
+    <div class="row">
+      <p>{{ darkTheme ? 'Dark Theme' : 'Light Theme' }}</p>
+    </div>
+  </div>
 </div>

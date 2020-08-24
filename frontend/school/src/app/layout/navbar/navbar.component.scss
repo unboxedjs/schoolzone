@@ -16,7 +16,7 @@
         background-color: color(active);
       }
       &:hover:not([class^='active']) {
-        background-color: color(hover);
+        background-color: color(hover, main);
       }
       img {
         height: 30px;

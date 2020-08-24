@@ -10,14 +10,14 @@
     width: 100vw;
     demo-nav {
       height: 100vh;
-      background: #151b26;
+      background: color(nav);
       text-align: center;
       box-shadow: 1px 1px 5px color(black);
     }
     .col-xs-10 {
       display: block;
       height: 100%;
-      background: color(white);
+      background: color(view);
       padding: size(padding);
       overflow: {
         x: auto;
