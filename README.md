@@ -11,18 +11,19 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Add control components like inputs, buttons, checkbox etc,.
-- Have the controls documented if required (npm package:ngx-markdown).
+- Create Observable for dark theme
+- Add the dark theme class to top level selector.
+- Modify CSS Variables to required dark theme colors.
 
 ### Terminal Commands Used
 
-- ng g c inputFields --project=sandbox
 - ng serve --serve-path=sandbox --project=sandbox
+- ng serve
 
 ### Problems you might Run Into
 
 - Nil
 
-### Lecture 49
+### Lecture 50
 
-- Adding Control Components
+- Including Theme Engine

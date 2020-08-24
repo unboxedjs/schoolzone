@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from '../../../_services/general.service';
 
 @Component({
   selector: 'sz-slidenav',
   templateUrl: './slidenav.component.html',
-  styleUrls: ['./slidenav.component.scss']
+  styleUrls: ['./slidenav.component.scss'],
 })
 export class SlidenavComponent implements OnInit {
-
-  constructor() { }
+  darkTheme = false;
+  constructor(private general: GeneralService) {}
 
   ngOnInit(): void {
+    this.general.darkTheme$.subscribe(value => (this.darkTheme = value));
   }
 
+  changeTheme() {
+    this.darkTheme = !this.darkTheme;
+    this.general.setDarkTheme(this.darkTheme);
+  }
 }
