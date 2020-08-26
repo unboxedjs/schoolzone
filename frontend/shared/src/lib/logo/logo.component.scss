@@ -12,6 +12,10 @@
   img {
     height: 12px;
     margin-right: 4px;
+    &.large {
+      height: 2.5vw;
+      min-height: 50px;
+    }
   }
   .sz-logo {
     font-family: mRegular;
@@ -20,6 +24,9 @@
     color: color(secondary);
     span {
       color: color(primary);
+    }
+    &.large {
+      font-size: 24px;
     }
   }
 }

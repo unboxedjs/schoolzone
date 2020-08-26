@@ -7,7 +7,7 @@ import { LayoutModule } from './layout/layout.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { EntityDataModule } from '@ngrx/data';
-import { SettingsModule } from './settings/settings.module';
+import { SettingModule } from './setting/setting.module';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { provideMockStore } from '@ngrx/store/testing';
 import { entityConfig } from './entity-metadata';
@@ -35,7 +35,7 @@ describe('AppComponent', () => {
         StoreRouterConnectingModule.forRoot(),
         EffectsModule.forRoot([]),
         EntityDataModule.forRoot(entityConfig),
-        SettingsModule,
+        SettingModule,
         StoreDevtoolsModule.instrument(),
       ],
       providers: [provideMockStore({})],

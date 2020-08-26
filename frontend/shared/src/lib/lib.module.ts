@@ -7,9 +7,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const importAndExport = [
   ControlsModule,
+  FormsModule,
+  ReactiveFormsModule,
   MatIconModule,
   MatDialogModule,
   MatSnackBarModule,

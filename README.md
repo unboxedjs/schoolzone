@@ -17,7 +17,7 @@ The Schoolzone app could be started with the following commands,
 
 ### Terminal Commands Used
 
-- ng serve
+- ng g m dashboard --module=app
 
 ### Problems you might Run Into
 

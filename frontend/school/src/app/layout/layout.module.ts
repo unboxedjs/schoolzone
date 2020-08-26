@@ -13,6 +13,8 @@ import { UpdatesComponent } from './sidebar/updates/updates.component';
 import { SlidenavComponent } from './content/slidenav/slidenav.component';
 import { ViewportComponent } from './content/viewport/viewport.component';
 import { LibModule } from 'frontend/shared/src/lib/lib.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { LibModule } from 'frontend/shared/src/lib/lib.module';
     GroupsComponent,
     UpdatesComponent,
     SlidenavComponent,
+    NotFoundComponent,
+    LoginComponent,
     ViewportComponent,
   ],
   imports: [CommonModule, LibModule],

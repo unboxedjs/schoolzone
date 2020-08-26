@@ -1,3 +1,8 @@
 <p *ngIf="poweredBy" class="powered">powered by</p>
-<img draggable="false" src="assets/images/logo.png" alt="logo" />
-<p class="sz-logo">School<span>zone</span></p>
+<img
+  draggable="false"
+  [ngClass]="size"
+  src="assets/images/logo.png"
+  alt="logo"
+/>
+<p class="sz-logo" [ngClass]="size">School<span>zone</span></p>

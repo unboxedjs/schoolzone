@@ -13,4 +13,4 @@ import { ConfigEffects } from './+state/config.effects';
     EffectsModule.forFeature([ConfigEffects]),
   ],
 })
-export class SettingsModule {}
+export class SettingModule {}

@@ -248,3 +248,9 @@ span.link {
 input {
   color: color(fg) !important;
 }
+
+.view-port {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}

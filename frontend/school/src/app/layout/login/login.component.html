@@ -1,0 +1,20 @@
+<div class="view-port">
+  <sz-logo [poweredBy]="false" size="large"></sz-logo>
+  <div class="hero">
+    <img src="assets/images/login-cover.svg" alt="School" />
+    <div class="login">
+      <h1>Vidya Mandir Senior Secondary School</h1>
+      <form [formGroup]="loginForm">
+        <div class="fields">
+          <sz-input name="Username"></sz-input>
+          <sz-input name="Password" type="password"></sz-input>
+        </div>
+        <div class="pass">
+          <sz-checkbox [initialValue]="true" name="Remember Me"></sz-checkbox>
+          <span class="link">Forgot Password?</span>
+        </div>
+        <sz-button name="Login"></sz-button>
+      </form>
+    </div>
+  </div>
+</div>
