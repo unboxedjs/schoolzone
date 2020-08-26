@@ -18,4 +18,8 @@ export class SlidenavComponent implements OnInit {
     this.darkTheme = !this.darkTheme;
     this.general.setDarkTheme(this.darkTheme);
   }
+
+  toggleSlider(ref: string) {
+    this.general.setSliderToggle(ref);
+  }
 }

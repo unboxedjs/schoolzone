@@ -11,19 +11,18 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Create Observable for dark theme
-- Add the dark theme class to top level selector.
-- Modify CSS Variables to required dark theme colors.
+- Create Observable for Slider
+- Check responsiveness.
+- Modify CSS Variables to accomodate the slider changes.
 
 ### Terminal Commands Used
 
-- ng serve --serve-path=sandbox --project=sandbox
 - ng serve
 
 ### Problems you might Run Into
 
-- Nil
+- Add BrowserAnimationsModule
 
-### Lecture 50
+### Lecture 51
 
-- Including Theme Engine
+- Creating a Slider Control

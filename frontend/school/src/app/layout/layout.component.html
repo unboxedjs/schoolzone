@@ -1,3 +1,14 @@
-<sz-navbar></sz-navbar>
-<sz-content></sz-content>
-<sz-sidebar></sz-sidebar>
+<mat-drawer-container>
+  <mat-drawer #drawer mode="over" position="end">
+    <ng-container *ngTemplateOutlet="default"></ng-container>
+  </mat-drawer>
+  <mat-drawer-content>
+    <sz-navbar></sz-navbar>
+    <sz-content></sz-content>
+    <sz-sidebar></sz-sidebar>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<ng-template #default>
+  <p>This is a Default Sidebar template</p>
+</ng-template>

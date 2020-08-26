@@ -5,12 +5,16 @@ import { ControlsModule } from './controls/controls.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const importAndExport = [
   ControlsModule,
   MatIconModule,
   MatDialogModule,
   MatSnackBarModule,
+  MatSidenavModule,
+  BrowserAnimationsModule,
 ];
 const declareAndExport = [LogoComponent];
 @NgModule({

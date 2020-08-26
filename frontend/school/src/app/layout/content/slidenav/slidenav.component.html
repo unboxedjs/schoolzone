@@ -1,15 +1,27 @@
 <ul>
   <li>
-    <img src="assets/icons/check-list.svg" alt="todo" />
+    <img
+      src="assets/icons/check-list.svg"
+      (click)="toggleSlider('TODO')"
+      alt="todo"
+    />
   </li>
-  <li><img src="assets/icons/turn-on.svg" alt="theme" /></li>
+  <li><img src="assets/icons/turn-on.svg" alt="logout" /></li>
   <li>
     <img src="assets/icons/moon.svg" (click)="changeTheme()" alt="theme" />
   </li>
   <li>
-    <img src="assets/icons/export.svg" alt="export" />
+    <img
+      src="assets/icons/export.svg"
+      (click)="toggleSlider('EXPORT')"
+      alt="export"
+    />
   </li>
   <li>
-    <img src="assets/icons/loudspeaker.svg" alt="notifications" />
+    <img
+      src="assets/icons/loudspeaker.svg"
+      (click)="toggleSlider('NOTIFY')"
+      alt="notifications"
+    />
   </li>
 </ul>

@@ -8,10 +8,15 @@ import { BehaviorSubject } from 'rxjs';
 export class GeneralService {
   appStatus$ = this.http.get('v1');
   darkTheme$ = new BehaviorSubject<boolean>(false);
+  slider$ = new BehaviorSubject<boolean | string>(false);
 
   constructor(private http: HttpClient) {}
 
   setDarkTheme(isDarkTheme: boolean): void {
     this.darkTheme$.next(isDarkTheme);
+  }
+
+  setSliderToggle(sliderTarget: boolean | string): void {
+    this.slider$.next(sliderTarget);
   }
 }
