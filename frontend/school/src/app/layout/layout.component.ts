@@ -9,6 +9,7 @@ import { GeneralService } from '../_services/general.service';
 export class LayoutComponent implements OnInit {
   @ViewChild('drawer') drawer;
   sliderToggle$ = this.general.slider$;
+  isDarkTheme$ = this.general.darkTheme$;
 
   constructor(private general: GeneralService) {}
 

@@ -1,4 +1,4 @@
-<mat-drawer-container>
+<mat-drawer-container [ngClass]="{ 'dark-theme': isDarkTheme$ | async }">
   <mat-drawer #drawer mode="over" position="end">
     <ng-container *ngTemplateOutlet="default"></ng-container>
   </mat-drawer>
