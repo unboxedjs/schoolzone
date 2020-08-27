@@ -21,6 +21,6 @@ The Schoolzone app could be started with the following commands,
 
 - Nil
 
-### Lecture 51
+### Lecture 53
 
-- Angular Routing - Basics
+- Angular Routing - Lazy Loading
