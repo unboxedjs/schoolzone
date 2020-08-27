@@ -1,20 +1,28 @@
 <img class="school-logo" src="assets/images/school-logo.png" alt="schoolzone" />
 <ul>
-  <li class="active">
+  <li
+    [routerLink]="['/dashboard']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: false }"
+  >
     <img src="assets/icons/school.svg" alt="school" />
   </li>
-  <li><img src="assets/icons/bus.svg" alt="bus" /></li>
-  <li>
+  <li [routerLink]="['/travel']" routerLinkActive="active">
+    <img src="assets/icons/bus.svg" alt="bus" />
+  </li>
+  <li [routerLink]="['/event']" routerLinkActive="active">
     <img src="assets/icons/schedule.svg" alt="schedule" />
   </li>
-  <li>
+  <li [routerLink]="['/activity']" routerLinkActive="active">
     <img src="assets/icons/achievement.svg" alt="achievement" />
   </li>
-  <li>
+  <li [routerLink]="['/payment']" routerLinkActive="active">
     <img src="assets/icons/charge.svg" alt="charge" />
   </li>
-  <li><img src="assets/icons/forum.svg" alt="chat" /></li>
-  <li>
+  <li [routerLink]="['/interaction']" routerLinkActive="active">
+    <img src="assets/icons/forum.svg" alt="chat" />
+  </li>
+  <li [routerLink]="['/setting']" routerLinkActive="active">
     <img src="assets/icons/setting.svg" alt="school" />
   </li>
 </ul>

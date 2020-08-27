@@ -3,40 +3,10 @@
 :host {
   display: flex;
   justify-content: space-between;
-  ul {
-    height: size(subnav, height);
-    align-items: center;
-    li {
-      cursor: pointer;
-      height: size(subnav, height);
-      h3 {
-        line-height: size(subnav, height);
-      }
-      &.active {
-        border-bottom: size(line) solid color(primary);
-        h3 {
-          color: color(primary);
-        }
-      }
-      &:hover:not([class^='active']) {
-        h3 {
-          color: color(hover);
-        }
-      }
-    }
-  }
 
   @include mobile {
     .today {
       display: none;
-    }
-    ul {
-      overflow-x: scroll;
-      @include hide-overflow;
-      li {
-        width: 150px;
-        flex-shrink: 0;
-      }
     }
   }
 }

@@ -9,13 +9,19 @@ import { TabInput } from '../controls.interface';
 export class TabControl implements OnInit {
   tabs: TabInput[];
   firstItem: TabInput;
+  onLoad = true;
   @Input('tabs')
   set Tabs([first, ...rest]: TabInput[]) {
     this.tabs = rest;
     this.firstItem = first;
+    this.onLoad = true;
   }
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  moderate() {
+    this.onLoad = false;
+  }
 }

@@ -15,12 +15,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { EntityDataModule } from '@ngrx/data';
 import { entityConfig } from './entity-metadata';
 import { SettingModule } from './setting/setting.module';
-import { ActivityModule } from './activity/activity.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { EventModule } from './event/event.module';
-import { InteractionModule } from './interaction/interaction.module';
-import { PaymentModule } from './payment/payment.module';
-import { TravelModule } from './travel/travel.module';
 
 const { production } = environment;
 @NgModule({
@@ -45,12 +39,6 @@ const { production } = environment;
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot(entityConfig),
     SettingModule,
-    ActivityModule,
-    DashboardModule,
-    EventModule,
-    InteractionModule,
-    PaymentModule,
-    TravelModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

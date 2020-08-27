@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Data } from '@angular/router';
+import { selectRouteData } from '../../../+state';
 
 @Component({
   selector: 'sz-subnav',
@@ -7,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubnavComponent implements OnInit {
   date = new Date();
-  constructor() {}
+  data$: Observable<Data> = this.store.select(selectRouteData);
+
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
 }

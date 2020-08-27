@@ -1,12 +1,14 @@
 <ul>
   <li
-    [routerLink]="firstItem.link"
+    [routerLink]="[firstItem.link]"
     routerLinkActive="active"
+    [ngClass]="{'activer': onLoad}"
     [routerLinkActiveOptions]="{ exact: true }"
   >
     <h3>{{firstItem.name}}</h3>
   </li>
   <li
+    (click)="moderate()"
     [routerLink]="[item.link]"
     routerLinkActive="active"
     *ngFor="let item of tabs"

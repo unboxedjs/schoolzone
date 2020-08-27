@@ -1,6 +1,7 @@
 @import '_mixins';
 
 :host {
+  width: 70%;
   display: flex;
   justify-content: space-between;
   ul {
@@ -18,6 +19,12 @@
           color: color(primary);
         }
       }
+      &.activer {
+        border-bottom: size(line) solid color(primary);
+        h3 {
+          color: color(primary);
+        }
+      }
       &:hover:not([class^='active']) {
         h3 {
           color: color(hover, main);
@@ -27,6 +34,7 @@
   }
 
   @include mobile {
+    width: 100%;
     ul {
       overflow-x: scroll;
       @include hide-overflow;

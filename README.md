@@ -11,9 +11,7 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Create Observable for Slider
-- Check responsiveness.
-- Modify CSS Variables to accomodate the slider changes.
+- Add Routing links to navbar and Subnavbar
 
 ### Terminal Commands Used
 
@@ -21,8 +19,8 @@ The Schoolzone app could be started with the following commands,
 
 ### Problems you might Run Into
 
-- Add BrowserAnimationsModule
+- Nil
 
 ### Lecture 51
 
-- Creating a Slider Control
+- Angular Routing - Basics
