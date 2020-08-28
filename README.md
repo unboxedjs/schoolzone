@@ -11,16 +11,17 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Add Routing links to navbar and Subnavbar
+- Add Angular authentication and Can activate method for protected routes.
 
 ### Terminal Commands Used
 
-- ng g m dashboard --module=app
+- ng generate guard guards/auth
+- yarn add @auth0/angular-jwt
 
 ### Problems you might Run Into
 
 - Nil
 
-### Lecture 53
+### Lecture 54
 
-- Angular Routing - Lazy Loading
+- Angular Authentication and Auth Guard

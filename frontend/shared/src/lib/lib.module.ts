@@ -8,6 +8,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
 
 const importAndExport = [
   ControlsModule,
@@ -20,8 +21,15 @@ const importAndExport = [
   BrowserAnimationsModule,
 ];
 const declareAndExport = [LogoComponent];
+
+const tokenGetter = () => localStorage.getItem('token');
+
 @NgModule({
-  imports: [...importAndExport, BrowserModule],
+  imports: [
+    ...importAndExport,
+    BrowserModule,
+    JwtModule.forRoot({ config: { tokenGetter: tokenGetter } }),
+  ],
   exports: [...importAndExport, ...declareAndExport],
   declarations: [...declareAndExport],
 })

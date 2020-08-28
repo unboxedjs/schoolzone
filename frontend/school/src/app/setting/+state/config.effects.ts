@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { GeneralService } from '../../_services/general.service';
-import { LoadConfig, SuccessLoadConfig } from './config.action';
-import { map, mergeMap } from 'rxjs/operators';
-import { AppStatus } from '@sz/interface';
+import {
+  LoadConfig,
+  SuccessLoadConfig,
+  LoginUser,
+  SuccessLogin,
+} from './config.action';
+import { map, mergeMap, exhaustMap } from 'rxjs/operators';
+import { AppStatus, AuthResponse } from '@sz/interface';
+import { AuthService } from 'frontend/shared/src/lib/services/auth.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class ConfigEffects {
@@ -20,5 +27,25 @@ export class ConfigEffects {
     ),
   );
 
-  constructor(private actions$: Actions, private general: GeneralService) {}
+  authConfig$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(LoginUser),
+      exhaustMap(user =>
+        this.auth.login(user).pipe(
+          map((response: AuthResponse) => {
+            this.router.navigate(['']);
+            localStorage.setItem('token', response.token);
+            return SuccessLogin({ payload: response });
+          }),
+        ),
+      ),
+    ),
+  );
+
+  constructor(
+    private actions$: Actions,
+    private general: GeneralService,
+    private auth: AuthService,
+    private router: Router,
+  ) {}
 }

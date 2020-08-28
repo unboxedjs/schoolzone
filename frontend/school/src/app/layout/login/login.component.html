@@ -6,14 +6,23 @@
       <h1>Vidya Mandir Senior Secondary School</h1>
       <form [formGroup]="loginForm">
         <div class="fields">
-          <sz-input name="Username"></sz-input>
-          <sz-input name="Password" type="password"></sz-input>
+          <sz-input
+            name="Username"
+            required="true"
+            [control]="loginForm.controls.userName"
+          ></sz-input>
+          <sz-input
+            name="Password"
+            type="password"
+            required="true"
+            [control]="loginForm.controls.password"
+          ></sz-input>
         </div>
         <div class="pass">
           <sz-checkbox [initialValue]="true" name="Remember Me"></sz-checkbox>
           <span class="link">Forgot Password?</span>
         </div>
-        <sz-button name="Login"></sz-button>
+        <sz-button name="Login" (click)="login()"></sz-button>
       </form>
     </div>
   </div>
