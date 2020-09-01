@@ -7,8 +7,8 @@ import {
   LoginUser,
   SuccessLogin,
 } from './config.action';
-import { map, mergeMap, exhaustMap } from 'rxjs/operators';
-import { AppStatus, AuthResponse } from '@sz/interface';
+import { map, mergeMap, exhaustMap, switchMap } from 'rxjs/operators';
+import { AppStatus, AuthResponse, JwtPayload } from '@sz/interface';
 import { AuthService } from 'frontend/shared/src/lib/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -19,9 +19,19 @@ export class ConfigEffects {
       ofType(LoadConfig),
       mergeMap(() =>
         this.general.appStatus$.pipe(
-          map((status: AppStatus) =>
-            SuccessLoadConfig({ payload: { status } }),
-          ),
+          switchMap((status: AppStatus) => {
+            let actions = [];
+            const token = localStorage.getItem('token');
+            if (token) {
+              actions.push(
+                SuccessLogin({
+                  payload: { user: this.decodeUser(token) },
+                }),
+              );
+            }
+            actions.push(SuccessLoadConfig({ payload: { status } }));
+            return actions;
+          }),
         ),
       ),
     ),
@@ -35,12 +45,23 @@ export class ConfigEffects {
           map((response: AuthResponse) => {
             this.router.navigate(['']);
             localStorage.setItem('token', response.token);
-            return SuccessLogin({ payload: response });
+            return SuccessLogin({
+              payload: { user: this.decodeUser(response.token) },
+            });
           }),
         ),
       ),
     ),
   );
+
+  decodeUser(token): JwtPayload {
+    if (token) {
+      const payload = (token.split('.') || [])[1];
+      const { iat, exp, __v, ...user } = JSON.parse(atob(payload));
+      return user;
+    }
+    return null;
+  }
 
   constructor(
     private actions$: Actions,

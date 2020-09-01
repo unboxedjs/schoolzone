@@ -7,3 +7,8 @@ export const SelectStatus = createSelector(
   SelectConfig,
   (state: ConfigState) => state.status,
 );
+
+export const SelectUser = createSelector(
+  SelectConfig,
+  (state: ConfigState) => state.user,
+);
