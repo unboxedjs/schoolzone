@@ -13,6 +13,8 @@ import {
   settingRoutes,
 } from './path';
 import { AuthGuard } from './guards/auth.guard';
+import { RoleGuard } from './guards/role.guard';
+import { Role } from '@sz/enum';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -47,7 +49,12 @@ const routes: Routes = [
       },
       {
         path: 'payment',
-        data: { title: 'Payments', children: paymentRoutes },
+        data: {
+          title: 'Payments',
+          children: paymentRoutes,
+          expectedRoles: [Role.PARENT],
+        },
+        canLoad: [RoleGuard],
         loadChildren: () =>
           import('./payment/payment.module').then(m => m.PaymentModule),
       },

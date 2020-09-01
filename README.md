@@ -11,17 +11,16 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Add Angular authentication and Can activate method for protected routes.
+- Add canLoad and canActivate methods for role guard.
 
 ### Terminal Commands Used
 
-- ng generate guard guards/auth
-- yarn add @auth0/angular-jwt
+- ng generate guard guards/role
 
 ### Problems you might Run Into
 
 - Nil
 
-### Lecture 54
+### Lecture 55
 
-- Angular Authentication and Auth Guard
+- Role Guard
