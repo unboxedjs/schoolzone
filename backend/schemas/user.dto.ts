@@ -40,4 +40,4 @@ export const UserSchema = new Schema({
   },
 }).loadClass(CreateUserDTO);
 
-// interfaces - typescript, make scoding easier
+// interfaces - typescript, makes coding easier

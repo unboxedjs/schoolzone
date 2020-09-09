@@ -29,6 +29,7 @@ export enum Controls {
   Auth = 'auth',
   Users = 'users',
   Logs = 'logs',
+  Todos = 'todos',
 }
 
 export enum CRUD {

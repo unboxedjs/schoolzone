@@ -19,6 +19,7 @@ import rateLimit from 'express-rate-limit';
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
+      useFindAndModify: false,
     }),
     UserModule,
   ],
