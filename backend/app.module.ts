@@ -10,6 +10,7 @@ import { AppService } from './app.service';
 import { config } from './config';
 import { UserModule } from './controllers/user/user.module';
 import { LogController } from './controllers/log/log.controller';
+import { MicroModule } from './controllers/micro/micro.module';
 import * as lb from '@google-cloud/logging-bunyan';
 import rateLimit from 'express-rate-limit';
 
@@ -22,6 +23,7 @@ import rateLimit from 'express-rate-limit';
       useFindAndModify: false,
     }),
     UserModule,
+    MicroModule,
   ],
   controllers: [AppController, LogController],
   providers: [AppService],

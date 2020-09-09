@@ -11,16 +11,18 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Add canLoad and canActivate methods for role guard.
+- Implement GET,PUT,POST and DELETE for todos.
 
 ### Terminal Commands Used
 
-- ng generate guard guards/role
+- nest g mo controllers/micro
+- nest g co controllers/micro/todo --no-spec --flat
+- nest g s controllers/micro/todo --no-spec --flat
 
 ### Problems you might Run Into
 
 - Nil
 
-### Lecture 55
+### Lecture 57
 
-- Role Guard
+- Basic CRUD Functionlity
