@@ -52,7 +52,7 @@ const routes: Routes = [
         data: {
           title: 'Payments',
           children: paymentRoutes,
-          expectedRoles: [Role.PARENT],
+          expectedRoles: [Role.PARENT.valueOf()],
         },
         canLoad: [RoleGuard],
         loadChildren: () =>
