@@ -34,7 +34,6 @@ export class RoleGuard implements CanActivate, CanLoad {
 
     return this.store.select(SelectUser).pipe(
       map(user => {
-        console.info(expectedRoles, user.role);
         if (expectedRoles?.includes(user.role)) {
           return true;
         } else {
