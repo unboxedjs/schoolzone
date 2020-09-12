@@ -14,5 +14,5 @@ export const TodoSchema = new Schema({
     required: true,
   },
   completed: { type: Boolean, default: false },
-  userName: String,
+  userName: { type: String, index: true },
 }).loadClass(CreateTodoDTO);

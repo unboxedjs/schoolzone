@@ -11,18 +11,17 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Implement GET,PUT,POST and DELETE for todos.
+- Identify and include index for your db schema
+- Look into aggregate function.
 
 ### Terminal Commands Used
 
-- nest g mo controllers/micro
-- nest g co controllers/micro/todo --no-spec --flat
-- nest g s controllers/micro/todo --no-spec --flat
+- Nil
 
 ### Problems you might Run Into
 
 - Nil
 
-### Lecture 57
+### Lecture 59
 
-- Basic CRUD Functionlity
+- Advanced concepts in mongoDB
