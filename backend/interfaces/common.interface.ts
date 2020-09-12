@@ -6,6 +6,10 @@ export interface AppStatus {
   message: string;
 }
 
+export interface Config {
+  map: string;
+}
+
 export interface Common extends Document {
   createdBy?: string;
   updatedBy?: string;

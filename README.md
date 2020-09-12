@@ -11,16 +11,18 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- A simple overview on ressemblance between the endpoints.
+- Generate Map API Key
+- Include script tag with API key
+- Add map component
 
 ### Terminal Commands Used
 
-- Nil
+- yarn add @angular/google-maps
 
 ### Problems you might Run Into
 
 - Nil
 
-### Lecture 60
+### Lecture 62
 
-- Overview on student module APIs
+- Angular Map Component

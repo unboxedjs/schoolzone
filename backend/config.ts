@@ -14,5 +14,6 @@ export const config = {
   secret: process.env.SZ_SECRET,
   gcpProject: process.env.SZ_GCP_PROJECT_ID,
   gcpKey: process.env.SZ_GCP_KEY_JSON,
+  mapKey: process.env.SZ_MAP_KEY,
   mongoUri: `mongodb+srv://${process.env.SZ_MONGO_USER}:${process.env.SZ_MONGO_PASS}@${process.env.SZ_MONGO_HOST}/${process.env.SZ_MONGO_DB}?authSource=admin&replicaSet=${process.env.SZ_MONGO_REPLICA}&readPreference=primary&ssl=true`,
 };
