@@ -30,6 +30,22 @@ export enum Controls {
   Users = 'users',
   Logs = 'logs',
   Todos = 'todos',
+  Notification = 'notification',
+  Reminders = 'reminders',
+  Timetables = 'timetables',
+  Syllabus = 'syllabus',
+  Schedules = 'schedules',
+  Results = 'results',
+  Buses = 'buses',
+  Trips = 'trips',
+  Events = 'events',
+  Leaves = 'leaves',
+  Awards = 'awards',
+  Activities = 'activities',
+  Fees = 'fees',
+  Forums = 'forums',
+  Messages = 'messages',
+  Details = 'details',
 }
 
 export enum CRUD {
@@ -90,4 +106,13 @@ export enum GcpLogLevel {
   CRITICAL = 'critical',
   ALERT = 'alert',
   EMERGENCY = 'emergency',
+}
+
+export enum Color {
+  PRIMARY = '#1976d2',
+  SECONDARY = '#616161',
+  ERROR = '#b92d00',
+  ACCENT = '#7f6196',
+  WARN = '#c2b678',
+  GENTLE = '#78c2a4',
 }

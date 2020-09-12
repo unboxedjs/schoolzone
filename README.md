@@ -11,8 +11,7 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Identify and include index for your db schema
-- Look into aggregate function.
+- A simple overview on ressemblance between the endpoints.
 
 ### Terminal Commands Used
 
@@ -22,6 +21,6 @@ The Schoolzone app could be started with the following commands,
 
 - Nil
 
-### Lecture 59
+### Lecture 60
 
-- Advanced concepts in mongoDB
+- Overview on student module APIs

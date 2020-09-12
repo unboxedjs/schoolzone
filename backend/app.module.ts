@@ -11,6 +11,13 @@ import { config } from './config';
 import { UserModule } from './controllers/user/user.module';
 import { LogController } from './controllers/log/log.controller';
 import { MicroModule } from './controllers/micro/micro.module';
+// import { DashboardModule } from './controllers/dashboard/dashboard.module';
+// import { TravelModule } from './controllers/travel/travel.module';
+// import { EventModule } from './controllers/event/event.module';
+// import { ActivityModule } from './controllers/activity/activity.module';
+// import { FeeModule } from './controllers/fee/fee.module';
+// import { InteractionModule } from './controllers/interaction/interaction.module';
+// import { SettingModule } from './controllers/setting/setting.module';
 import * as lb from '@google-cloud/logging-bunyan';
 import rateLimit from 'express-rate-limit';
 
@@ -24,6 +31,13 @@ import rateLimit from 'express-rate-limit';
     }),
     UserModule,
     MicroModule,
+    // DashboardModule,
+    // TravelModule,
+    // EventModule,
+    // ActivityModule,
+    // FeeModule,
+    // InteractionModule,
+    // SettingModule,
   ],
   controllers: [AppController, LogController],
   providers: [AppService],
