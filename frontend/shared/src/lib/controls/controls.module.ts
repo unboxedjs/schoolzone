@@ -21,7 +21,16 @@ import { SpinnerControl } from './spinner/spinner.control';
 import { ExpandControl } from './expand/expand.control';
 import { RouterModule } from '@angular/router';
 import { ListControl, ListSelectionControl } from './list/list.control';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
 import { CalendarControl } from './calendar/calendar.control';
+
+FullCalendarModule.registerPlugins([
+  // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin,
+]);
 
 const declareAndExport = [
   InputControl,
@@ -57,6 +66,7 @@ const declareAndExport = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    FullCalendarModule,
   ],
   exports: [...declareAndExport, RouterModule],
 })

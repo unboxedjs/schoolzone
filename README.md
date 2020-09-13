@@ -19,6 +19,7 @@ The Schoolzone app could be started with the following commands,
 - yarn add @fullcalendar/angular
 - yarn add @fullcalendar/daygrid
 - yarn add @fullcalendar/list
+- yarn add @fullcalendar/interaction
 
 ### Problems you might Run Into
 

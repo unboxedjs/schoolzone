@@ -12,6 +12,7 @@ import { GridComponent } from '../grid/grid.component';
 import { CardsModalsComponent } from '../cards-modals/cards-modals.component';
 import { TabViewComponent } from '../tab-view/tab-view.component';
 import { MiscComponent } from '../misc/misc.component';
+import { MyCalendarComponent } from '../my-calendar/my-calendar.component';
 
 const routes: Route[] = [
   { path: '', component: InputFieldsComponent },
@@ -22,6 +23,7 @@ const routes: Route[] = [
   { path: 'modal', component: CardsModalsComponent },
   { path: 'tab', component: TabViewComponent },
   { path: 'misc', component: MiscComponent },
+  { path: 'calendar', component: MyCalendarComponent },
 ];
 
 @NgModule({
