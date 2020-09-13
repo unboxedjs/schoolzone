@@ -4,6 +4,7 @@ import { MyRouteComponent } from './my-route/my-route.component';
 import { SchoolBusComponent } from './school-bus/school-bus.component';
 import { FieldTripComponent } from './field-trip/field-trip.component';
 import { Routes, RouterModule } from '@angular/router';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 const routes: Routes = [
   { path: '', component: MyRouteComponent },
@@ -13,6 +14,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [MyRouteComponent, SchoolBusComponent, FieldTripComponent],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, RouterModule.forChild(routes), GoogleMapsModule],
 })
 export class TravelModule {}
