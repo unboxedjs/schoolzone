@@ -13,6 +13,7 @@ import { CardsModalsComponent } from './cards-modals/cards-modals.component';
 import { TabViewComponent } from './tab-view/tab-view.component';
 import { MiscComponent } from './misc/misc.component';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
+import { MyCalendarComponent } from './my-calendar/my-calendar.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
     CardsModalsComponent,
     TabViewComponent,
     MiscComponent,
+    MyCalendarComponent,
   ],
   imports: [BrowserModule, LibModule, BrowserAnimationsModule, LayoutModule],
   providers: [

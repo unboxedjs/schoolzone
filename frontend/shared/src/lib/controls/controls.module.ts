@@ -21,6 +21,7 @@ import { SpinnerControl } from './spinner/spinner.control';
 import { ExpandControl } from './expand/expand.control';
 import { RouterModule } from '@angular/router';
 import { ListControl, ListSelectionControl } from './list/list.control';
+import { CalendarControl } from './calendar/calendar.control';
 
 const declareAndExport = [
   InputControl,
@@ -43,6 +44,7 @@ const declareAndExport = [
   SpinnerControl,
   ExpandControl,
   ListControl,
+  CalendarControl,
   ListSelectionControl,
   DisableControlDirective,
 ];

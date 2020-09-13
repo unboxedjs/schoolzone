@@ -11,13 +11,14 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Generate Map API Key
-- Include script tag with API key
-- Add map component
+- Add any calendar npm package to avoid ocding from scratch.
+- Test in sandbox after configuring in shared components.
 
 ### Terminal Commands Used
 
-- yarn add @angular/google-maps
+- yarn add @fullcalendar/angular
+- yarn add @fullcalendar/daygrid
+- yarn add @fullcalendar/list
 
 ### Problems you might Run Into
 
@@ -25,4 +26,4 @@ The Schoolzone app could be started with the following commands,
 
 ### Lecture 62
 
-- Angular Map Component
+- Calendar and Event Manager
