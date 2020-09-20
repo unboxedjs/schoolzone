@@ -99,6 +99,8 @@
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1000.2",
+    "@angular/compiler-cli": "~10.0.3",
     "@ngrx/schematics": "^9.2.0",
     "@types/bcrypt": "^3.0.0",
     "@types/bunyan": "^1.8.6",
@@ -111,7 +113,8 @@
     "@types/passport": "^1.0.4",
     "@types/passport-jwt": "^3.0.3",
     "@types/supertest": "^2.0.8"
-  },
+  ,    "typescript": "~3.9.5"
+},
   "jest": {
     "moduleFileExtensions": [
       "js",

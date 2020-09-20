@@ -11,20 +11,17 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Add any calendar npm package to avoid ocding from scratch.
-- Test in sandbox after configuring in shared components.
+- Create a seperate angular app to use in the slider for todo app.
 
 ### Terminal Commands Used
 
-- yarn add @fullcalendar/angular
-- yarn add @fullcalendar/daygrid
-- yarn add @fullcalendar/list
-- yarn add @fullcalendar/interaction
+- ng g application todo --minimal=true --style=scss --prefix=sz --skipTests=true
 
 ### Problems you might Run Into
 
-- Nil
+- tsconfig.base.json not found.
+  Just rename tsconfig.client.json for time being and rename it back.make sure to revert extends filename in tsconfig.app.json in todo app.
 
-### Lecture 63
+### Lecture 64
 
-- Angular Styling
+- Creating Micro in-built Application
