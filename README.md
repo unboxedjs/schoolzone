@@ -11,17 +11,18 @@ The Schoolzone app could be started with the following commands,
 
 ### TODO List
 
-- Create a seperate angular app to use in the slider for todo app.
+- Import Browser animations module
+- Add animations metadata
+- Create Triggers and animate
 
 ### Terminal Commands Used
 
-- ng g application todo --minimal=true --style=scss --prefix=sz --skipTests=true
+- Nil
 
 ### Problems you might Run Into
 
-- tsconfig.base.json not found.
-  Just rename tsconfig.client.json for time being and rename it back.make sure to revert extends filename in tsconfig.app.json in todo app.
+- Nil
 
-### Lecture 64
+### Lecture 65
 
-- Creating Micro in-built Application
+- Angular Animations

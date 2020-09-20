@@ -1,1 +1,15 @@
-<p>forum works!</p>
+<div class="forum">
+  <sz-list [items]="forumList"></sz-list>
+  <form [formGroup]="commentForm">
+    <sz-input
+      name="Leave Comment"
+      [control]="commentForm.controls.description"
+    ></sz-input>
+    <img
+      draggable="false"
+      src="assets/icons/send-empty.svg"
+      onerror="this.src='assets/images/place-small.svg'"
+      (click)="addcomment()"
+    />
+  </form>
+</div>
