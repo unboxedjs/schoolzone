@@ -1,12 +1,33 @@
+import {
+  trigger,
+  transition,
+  stagger,
+  animate,
+  style,
+  query,
+} from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Color } from '@sz/enum';
 import { ListItem } from 'frontend/shared/src/lib/controls/controls.interface';
 
 @Component({
   selector: 'sz-forum',
   templateUrl: './forum.component.html',
   styleUrls: ['./forum.component.scss'],
+  animations: [
+    trigger('listAnimation', [
+      transition('* => *', [
+        query(
+          ':enter',
+          [
+            style({ opacity: 0 }),
+            stagger(100, [animate('1s', style({ opacity: 1 }))]),
+          ],
+          { optional: true },
+        ),
+      ]),
+    ]),
+  ],
 })
 export class ForumComponent implements OnInit {
   self = {

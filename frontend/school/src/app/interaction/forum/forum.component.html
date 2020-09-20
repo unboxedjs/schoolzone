@@ -1,5 +1,5 @@
 <div class="forum">
-  <sz-list [items]="forumList"></sz-list>
+  <sz-list [@listAnimation]="forumList.length" [items]="forumList"></sz-list>
   <form [formGroup]="commentForm">
     <sz-input
       name="Leave Comment"
