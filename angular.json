@@ -567,8 +567,12 @@
               "frontend/todo/src/assets"
             ],
             "styles": [
+              "frontend/shared/src/global.scss",
               "frontend/todo/src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["frontend/shared/src/"]
+            },
             "scripts": []
           },
           "configurations": {
