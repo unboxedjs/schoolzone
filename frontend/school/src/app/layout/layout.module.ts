@@ -15,6 +15,7 @@ import { ViewportComponent } from './content/viewport/viewport.component';
 import { LibModule } from 'frontend/shared/src/lib/lib.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
+import { TodoModule } from 'frontend/todo/src/app/app.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { LoginComponent } from './login/login.component';
     LoginComponent,
     ViewportComponent,
   ],
-  imports: [CommonModule, LibModule],
+  imports: [CommonModule, LibModule, TodoModule.forRoot()],
   exports: [LayoutComponent],
 })
 export class LayoutModule {}

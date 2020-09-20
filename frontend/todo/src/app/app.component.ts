@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Color } from '@sz/enum';
 
 @Component({
-  selector: 'sz-root',
+  selector: 'sz-todo',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })

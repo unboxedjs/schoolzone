@@ -9,5 +9,13 @@ import { LibModule } from 'frontend/shared/src/lib/lib.module';
   imports: [BrowserModule, LibModule],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [AppComponent],
 })
-export class AppModule {}
+export class TodoModule {
+  static forRoot() {
+    return {
+      ngModule: TodoModule,
+      providers: [],
+    };
+  }
+}
